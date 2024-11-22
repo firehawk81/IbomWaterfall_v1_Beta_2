@@ -12,6 +12,9 @@
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/ibw-logo.png">
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
@@ -248,32 +251,35 @@
     <script type="text/javascript">
 
         // Add Room 2 STARTS
-        var count = 1;
-        function AddRoom2() {
-            const noORooms-2 = sessionStorage.getItem('noORooms-2');
-            const noORoomsAvailable-2 = sessionStorage.getItem('noORoomsAvailable-2');
-            const rate-2 = sessionStorage.getItem('Rate-2');
-            const roomType-2 = sessionStorage.getItem('RoomType-2');
+
+        function AddRoom1() {
+            const noORooms-1 = document.getElementById('noORooms-1');
+            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-1');
+            const rate-1 = document.getElementById('Rate-1');
+            const roomType-1 = document.getElementById('RoomType-1');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-2;
+            singleTotal = roomRate * nights * noORooms-1;
 
-            bookingDataLst = {Rate: rate-2, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-2, QTY: noORooms-2}
+            bookingDataLst = {Rate: rate-1, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-1, QTY: noORooms-1}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
+        </script>
+
+    <script type="text/javascript">
         function AddRoom2() {
-            const noORooms-2 = sessionStorage.getItem('noORooms-2');
-            const noORoomsAvailable-2 = sessionStorage.getItem('noORoomsAvailable-2');
-            const rate-2 = sessionStorage.getItem('Rate-2');
-            const roomType-2 = sessionStorage.getItem('RoomType-2');
+            const noORooms-2 = document.getElementById('noORooms-2');
+            const noORoomsAvailable-2 = document.getElementById('noORoomsAvailable-2');
+            const rate-2 = document.getElementById('Rate-2');
+            const roomType-2 = document.getElementById('RoomType-2');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -289,11 +295,15 @@
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
+    </script>
+
+    <script type="text/javascript">
+
         function AddRoom3() {
-            const noORooms-3 = sessionStorage.getItem('noORooms-3');
-            const noORoomsAvailable-1 = sessionStorage.getItem('noORoomsAvailable-3');
-            const rate-3 = sessionStorage.getItem('Rate-3');
-            const roomType-3 = sessionStorage.getItem('RoomType-3');
+            const noORooms-3 = document.getElementById('noORooms-3');
+            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-3');
+            const rate-3 = document.getElementById('Rate-3');
+            const roomType-3 = document.getElementById('RoomType-3');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -309,11 +319,15 @@
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
+    </script>
+
+    <script type="text/javascript">
+
         function AddRoom4() {
-            const noORooms-4 = sessionStorage.getItem('noORooms-4');
-            const noORoomsAvailable-1 = sessionStorage.getItem('noORoomsAvailable-4');
-            const rate-4 = sessionStorage.getItem('Rate-4');
-            const roomType-4 = sessionStorage.getItem('RoomType-4');
+            const noORooms-4 = document.getElementById('noORooms-4');
+            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-4');
+            const rate-4 = document.getElementById('Rate-4');
+            const roomType-4 = document.getElementById('RoomType-4');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -329,11 +343,15 @@
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
+    </script>
+
+    <script type="text/javascript">
+
         function AddRoom5() {
-            const noORooms-5 = sessionStorage.getItem('noORooms-5');
-            const noORoomsAvailable-5 = sessionStorage.getItem('noORoomsAvailable-5');
-            const rate-5 = sessionStorage.getItem('Rate-5');
-            const roomType-5 = sessionStorage.getItem('RoomType-5');
+            const noORooms-5 = document.getElementById('noORooms-5');
+            const noORoomsAvailable-5 = document.getElementById('noORoomsAvailable-5');
+            const rate-5 = document.getElementById('Rate-5');
+            const roomType-5 = document.getElementById('RoomType-5');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -349,11 +367,15 @@
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
+    </script>
+
+    <script type="text/javascript">
+
         function AddRoom6() {
-            const noORooms-6 = sessionStorage.getItem('noORooms-6');
-            const noORoomsAvailable-6 = sessionStorage.getItem('noORoomsAvailable-6');
-            const rate-6 = sessionStorage.getItem('Rate-6');
-            const roomType-1 = sessionStorage.getItem('RoomType-6');
+            const noORooms-6 = document.getElementById('noORooms-6');
+            const noORoomsAvailable-6 = document.getElementById('noORoomsAvailable-6');
+            const rate-6 = document.getElementById('Rate-6');
+            const roomType-1 = document.getElementById('RoomType-6');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -531,7 +553,7 @@
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue1()">&nbsp;-&nbsp;</div>
                                         <input class="col-sm-2 text-center m-1" type="number" id="noORooms1" min="1" value="1"  style="width:65px;"/>
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue1()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1()">Add Room</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1();" >Add Room</div>
                                     </div>
                                 </fieldset>
                             </div>
