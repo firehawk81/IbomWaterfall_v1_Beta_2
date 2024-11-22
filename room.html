@@ -90,32 +90,31 @@
                 window.location.href = 'checkout/cart.html';
 
              }
+// All Increament /Decreament STARTS here
+    function increaseValue1() {
+       var value = parseInt(document.getElementById('number1').value, 10);
+       value = isNaN(value) ? 0 : value;
+       value++;
+       document.getElementById('number1').value = value;
+    }
 
-                function increaseValue1() {
-                    var value = parseInt(document.getElementById('number1').value, 10);
-                    value = isNaN(value) ? 0 : value;
-                    value++;
-                    document.getElementById('number1').value = value;
-                }
-
-                function decreaseValue1() {
-                    var value = parseInt(document.getElementById('number1').value, 10);
-                    value = isNaN(value) ? 0 : value;
-                    value < 1 ? value = 1 : '';
-                    value--;
-                        if (value > 1) {
-                            //* Decrease the value if it's greater than 0
-                            newValue = parseFloat(value) - 1;
-                        value = newValue;
-                        } else {
-                            //* You can't have negitive people Yo!
-                            newValue = 1;
-                        value = newValue;
-                        }
-                    document.getElementById('number1').value = value;
-
-                }
-
+    function decreaseValue1() {
+        var value = parseInt(document.getElementById('number1').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value < 1 ? value = 1 : '';
+        value--;
+           if (value > 1) {
+               //* Decrease the value if it's greater than 0
+               newValue = parseFloat(value) - 1;
+               value = newValue;
+               } else {
+                //* You can't have negitive people Yo!
+                 newValue = 1;
+                 value = newValue;
+            }
+               document.getElementById('number1').value = value;
+          }
+// All Increament /Decreament Ends here
     </script>
 
 </head>
@@ -274,10 +273,10 @@
                                 <fieldset class="rooms-holder">
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
-                                        <div class="decrement btn btn-dark" onclick="decreaseValue1()">-</div>
+                                        <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue1()">&nbsp;-&nbsp;</div>
                                         <input class="col-sm-2 text-center m-1" type="number" id="number1" min="1" value="1"  style="width:75px;"/>
-                                        <div class="increment btn btn-dark" onclick="increaseValue1()">+</div>
-                                        <div class="btn btn-dark ml-2" onclick="AddRoom1()">Add Room</div>
+                                        <div class="increment btn btn-sm btn-dark" onclick="increaseValue1()">&nbsp;+&nbsp;</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1()">Add Room</div>
                                     </div>
                                 </fieldset>
                             </div>
