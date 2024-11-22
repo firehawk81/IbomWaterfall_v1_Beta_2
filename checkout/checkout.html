@@ -134,34 +134,6 @@
           }
 
     //FLUTTERWAVE InlineJS Ends Here
-        function InserReservations(e) {
-        e.preventDefault();
-
-        const url = "https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/DailySalesHotel";
-        const data = { FirstName: firstName, LastName: lastName, Phone: phone, Email: email, Address: address, State: state, City: city, Country: country, Zipcode: zipcode, Remark: checkoutComment, RoomsList: roomsLst, SubTotal: subTotal, Vat: vat, Total: total, RefNo: refNo };
-            //sessionStorage.setItem("Reservation", JSON.stringify(obj));
-
-        const other_params = {
-            headers : { "content-type" : "application/json; charset=UTF-8"},
-            body : data,
-            method : "POST",
-            mode : "cors"
-        };
-
-        fetch(url, other_params)
-            .then(function(response) {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("Could not reach the API: " + response.statusText);
-            }
-        }).then(function(data) {
-            document.getElementById("message").innerHTML = data.encoded;
-        }).catch(function(error) {
-            document.getElementById("message").innerHTML = error.message;
-        });
-        return true;
-    }
     /*-----------------------------------------------------------------------------------------------  Seperator  */
 
     //BUDPAY InlineJS Starts Here
@@ -203,6 +175,34 @@
         //    alert('Please make choose a payment method.');
         //}
     //BUDPAY InlineJS Ends Here
+        function InserReservations(e) {
+        e.preventDefault();
+
+        const url = "https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/DailySalesHotel";
+        const data = { FirstName: firstName, LastName: lastName, Phone: phone, Email: email, Address: address, State: state, City: city, Country: country, Zipcode: zipcode, Remark: checkoutComment, RoomsList: roomsLst, SubTotal: subTotal, Vat: vat, Total: total, RefNo: refNo };
+            //sessionStorage.setItem("Reservation", JSON.stringify(obj));
+
+        const other_params = {
+            headers : { "content-type" : "application/json; charset=UTF-8"},
+            body : data,
+            method : "POST",
+            mode : "cors"
+        };
+
+        fetch(url, other_params)
+            .then(function(response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Could not reach the API: " + response.statusText);
+            }
+        }).then(function(data) {
+            document.getElementById("message").innerHTML = data.encoded;
+        }).catch(function(error) {
+            document.getElementById("message").innerHTML = error.message;
+        });
+        return true;
+    }
     </script>    
     
 <div class="super_container">

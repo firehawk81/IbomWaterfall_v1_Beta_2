@@ -25,13 +25,94 @@
         }
     </style>
 
+</head>
+<body>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+
     <script type="text/javascript">
     var data = sessionStorage.getItem('BookingInfoObj');
         console.log(data);
-    </script>
 
-</head>
-<body>
+
+        const radio_flutterwave = document.getElementById("radio_flutterwave");
+        const radio_budpay = document.getElementById("radio_budpay");
+
+         function makePayment() {
+                //SaveSession();
+
+            FlutterwaveCheckout({
+              public_key: "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X",
+              tx_ref: "txref-DI0NzMx13", //refNo,
+              amount: 2500, //total,
+              currency: "NGN",
+              payment_options: "card, banktransfer, ussd",
+              redirect_url: "http://localhost:57264/verifications/flutter.aspx", // "https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/verifications/flutter.aspx",
+              meta: {
+                source: "docs-inline-test",
+                consumer_mac: "92a3-912ba-1192a",
+              },
+              customer: {
+                email: "dto1981@hotmail.com", //email,
+                phone_number: 07032499237, //phone,
+                name: "David T. Ogundele", //firstName+" "+lastName,
+              },
+              customizations: {
+                title: "Ibom Waterfall Resort & Suites",
+                description: "Payment for room reservation",
+                logo: "https://firehawk81.github.io/IbomWaterfall/checkout/images/ibw-logo.png",
+              },
+              callback: function (data){
+                console.log("payment callback:", data);
+              },
+              onclose: function() {
+                console.log("Payment cancelled!");
+              }
+            });
+          }
+
+    //FLUTTERWAVE InlineJS Ends Here
+    /*-----------------------------------------------------------------------------------------------  Seperator  */
+
+    //BUDPAY InlineJS Starts Here
+        //else if(radio_budpay.checked) {
+        function payWithBudPay() {
+                //SaveSession();
+            BudPayCheckout({
+                key: 'pk_test_bzac67e1dlry9t7izfjnarpxlwbbobylij7jwz', // Replace with your public key
+                email: 'dto1981@hotmail.com', //email,
+                amount: 2500, //total, //document.getElementById('txtTotal').value,
+                first_name: 'David', //firstName,
+                last_name: 'T. Ogundele', //lastName,
+                currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
+                reference: '' + Math.floor((Math.random() * 100000000000) + 1) + new Date().getSeconds() + new Date().getMilliseconds(), //refNo, // // generates a pseudo-unique reference. Please replace with a reference you generated. or remove the line entirely so our API will generate one for you
+                callback: function(response) {
+                //this happens after the payment is completed successfully
+                var reference = response.reference;
+                //alert('Payment complete! Reference: ' + reference + ', Status: ' + response.status);
+                  window.location.href = 'http://localhost:57264/verifications/budpay.aspx?reference='+response.reference;
+                    //
+                       // Do the Reservation insert here POST
+                    //
+                },
+                onClose: function (response) {
+                console.log(response);
+                alert('Transaction was not completed, window closed.');
+                },
+                custom_fields: {
+                    tax_pay_transaction: "",
+                    tax_pay_type: "",
+                    agency_code: "",
+                    revenue_code: "",
+                    revenue_credit_acc: "",
+                    cbn_code: "",
+                }
+            });
+          }
+        //} else {
+        //    alert('Please make choose a payment method.');
+        //}
+    //BUDPAY InlineJS Ends Here
+    </script>
 
     <div class="container">
         <div class="row gutters">
@@ -180,11 +261,14 @@
 
                                 <br /><h5 class="text-right"> PAY WITH</h5>
                                 <div class="custom-actions-btns">
-                                    <button type="submit" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5"><img src="images/Flutterwave_Logo.png" height="30" alt=""></button>
-                                    <button type="submit" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5"><img src="images/budpay-logo-mixed.png" height="30" alt=""></button>
+                                    <a href="#" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5" onclick="makePayment()">
+                                    <img src="images/Flutterwave_Logo.png" height="30" alt=""></a>
+                                    <a href="#" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5" onclick="payWithBudPay()">
+                                    <img src="images/budpay-logo-mixed.png" height="30" alt=""></a>
                                 </div>
                             </div>
 
+                            <script src="https://inlinepay.budpay.com/budpay-inline-custom.js"></script>
                         </div>
                     </div>
                 </div>
