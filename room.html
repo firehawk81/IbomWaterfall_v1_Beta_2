@@ -282,7 +282,7 @@
     <div class="roberto-rooms-area section-padding-100-0">
         <div class="container ">
             <div class="row ">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 mb-3">
                     <!-- Single Room Area -->
                     <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Room Thumbnail -->
@@ -292,8 +292,8 @@
                         <!-- Room Content -->
                         <div class="room-content">
                             <h2 id="RoomType-1">Deluxe Room</h2>
-                            <h4 id="Rate-1">&#8358;40,000 <span>/ Night</span></h4>
-                            <div class="room-feature">
+                            <h4 id="Rate-1">&#8358;50,000 <span>/ Night</span></h4>
+                            <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
@@ -322,13 +322,25 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2>Executive Room</h2>
-                            <h4 id="rate_2">&#8358;45,000 <span>/ Night</span></h4>
-                            <div class="room-feature">
+                            <h2 id="RoomType-2">Executive</h2>
+                            <h4 id="Rate-2">&#8358;65,000 <span>/ Night</span></h4>
+                            <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
                                 <h6>Services: <span>Wifi, smart tv ...</span></h6>
+                                <h6 id="noORoomsAvailable-2" class="">Available Rooms: <span> 15</span></h6>
+                            </div>
+                            <div class="mb-1">
+                                <fieldset class="rooms-holder">
+                                    <!--<label>Rooms</label>-->
+                                    <div class="buttons form-inline">
+                                        <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue2()">&nbsp;-&nbsp;</div>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms2" min="1" value="1" style="width:75px;" />
+                                        <div class="increment btn btn-sm btn-dark" onclick="increaseValue2()">&nbsp;+&nbsp;</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom2()">Add Room</div>
+                                    </div>
+                                </fieldset>
                             </div>
                             <a href="single-room.html?id=executive" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </div>
@@ -342,13 +354,25 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2>V.I.P</h2>
-                            <h4 id="rate_3">&#8358;55,000 <span>/ Night</span></h4>
-                            <div class="room-feature">
+                            <h2 id="RoomType-3">VIP</h2>
+                            <h4 id="Rate-3">&#8358;80,000 <span>/ Night</span></h4>
+                            <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
                                 <h6>Services: <span>Wifi, smart tv ...</span></h6>
+                                <h6 id="noORoomsAvailable-3" class="">Available Rooms: <span> 15</span></h6>
+                            </div>
+                            <div class="mb-1">
+                                <fieldset class="rooms-holder">
+                                    <!--<label>Rooms</label>-->
+                                    <div class="buttons form-inline">
+                                        <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue3()">&nbsp;-&nbsp;</div>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms3" min="1" value="1" style="width:75px;" />
+                                        <div class="increment btn btn-sm btn-dark" onclick="increaseValue3()">&nbsp;+&nbsp;</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom3()">Add Room</div>
+                                    </div>
+                                </fieldset>
                             </div>
                             <a href="single-room.html?id=vip" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </div>
@@ -362,15 +386,27 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2>Super Executive</h2>
-                            <h4 id="rate_4">&#8358;65,000 <span>/ Night</span></h4>
-                            <div class="room-feature">
+                            <h2 id="RoomType-4">Super Executive</h2>
+                            <h4 id="Rate-4">&#8358;70,000 <span>/ Night</span></h4>
+                            <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
                                 <h6>Services: <span>Wifi, smart tv ...</span></h6>
+                                <h6 id="noORoomsAvailable-4" class="">Available Rooms: <span> 15</span></h6>
                             </div>
-                            <a href="single-room.html?id=super" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            <div class="mb-1">
+                                <fieldset class="rooms-holder">
+                                    <!--<label>Rooms</label>-->
+                                    <div class="buttons form-inline">
+                                        <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue4()">&nbsp;-&nbsp;</div>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms4" min="1" value="1" style="width:75px;" />
+                                        <div class="increment btn btn-sm btn-dark" onclick="increaseValue4()">&nbsp;+&nbsp;</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom4()">Add Room</div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <a href="single-room.html?id=super executive" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
 
@@ -382,15 +418,27 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2>Penthouse Single</h2>
-                            <h4 id="rate_5">&#8358;60,000 <span>/ Night</span></h4>
-                            <div class="room-feature">
+                            <h2 id="RoomType-5">Penthouse</h2>
+                            <h4 id="Rate-5">&#8358;300,000 <span>/ Night</span></h4>
+                            <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
                                 <h6>Services: <span>Wifi, smart tv ...</span></h6>
+                                <h6 id="noORoomsAvailable-5" class="">Available Rooms: <span> 15</span></h6>
                             </div>
-                            <a href="single-room.html?id=Penthouse Single" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            <div class="mb-1">
+                                <fieldset class="rooms-holder">
+                                    <!--<label>Rooms</label>-->
+                                    <div class="buttons form-inline">
+                                        <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue5()">&nbsp;-&nbsp;</div>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms5" min="1" value="1" style="width:75px;" />
+                                        <div class="increment btn btn-sm btn-dark" onclick="increaseValue5()">&nbsp;+&nbsp;</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom5()">Add Room</div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <a href="single-room.html?id=penthouse" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
 
@@ -402,34 +450,46 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2>Penthouse (Eze Aro)</h2>
-                            <h4 id="rate_6">&#8358;295,000 <span>/ Night</span></h4>
-                            <div class="room-feature">
+                            <h2 id="RoomType-6">Eze Aro</h2>
+                            <h4 id="Rate-6">&#8358;350,000 <span>/ Night</span></h4>
+                            <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
                                 <h6>Services: <span>Wifi, smart tv ...</span></h6>
+                                <h6 id="noORoomsAvailable-6" class="">Available Rooms: <span> 15</span></h6>
                             </div>
-                            <a href="single-room.html?id=Penthouse" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            <div class="mb-1">
+                                <fieldset class="rooms-holder">
+                                    <!--<label>Rooms</label>-->
+                                    <div class="buttons form-inline">
+                                        <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue6()">&nbsp;-&nbsp;</div>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms6" min="1" value="1" style="width:75px;" />
+                                        <div class="increment btn btn-sm btn-dark" onclick="increaseValue6()">&nbsp;+&nbsp;</div>
+                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom6()">Add Room</div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <a href="single-room.html?id=deluxe" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
 
                     <!-- Pagination -->
-                    <nav class="roberto-pagination wow fadeInUp mb-100" data-wow-delay="1000ms">
+                    <!--<nav class="roberto-pagination wow fadeInUp mb-20" data-wow-delay="1000ms">
                         <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">Next <i class="fa fa-angle-right"></i></a></li>
                         </ul>
-                    </nav>
+                    </nav>-->
                 </div>
 
                 <div class="container2 col-12 col-lg-4">
                     <!-- Hotel Reservation Area -->
                     <div class=" hotel-reservation--area mb-100 sticky">
                         <form action="#" method="post">
-                            <div class="form-group mb-30">
+                            <div class="form-group mb-20">
                                 <label for="checkInDate">Date</label>
                                 <div class="input-daterange" id="datepicker">
                                     <div class="row no-gutters">
@@ -442,7 +502,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group mb-30">
+                            <div class="form-group mb-20">
                                 <label for="guests">Guests</label>
                                 <div class="row">
                                     <div class="col-6">
