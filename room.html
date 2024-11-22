@@ -85,14 +85,12 @@
                 CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType}
 
                     //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoObj', JSON.stringify(bookingData));
+                    sessionStorage.setItem('BookingInfoObj', JSON.stringify(bookingData));
 
-                        window.location.href = 'checkout/cart.html';
+                window.location.href = 'checkout/cart.html';
 
+             }
 
-        }
-
-            
                 function increaseValue1() {
                     var value = parseInt(document.getElementById('number1').value, 10);
                     value = isNaN(value) ? 0 : value;
