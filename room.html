@@ -32,74 +32,76 @@
 
     <script type="text/javascript">
 
-        var roomRate;
-        var roomType;
+    var roomRate;
+    var roomType;
 
-        $(document).ready(function () {
-        const roomRate = 0;
-            var id = (new URL(location.href)).searchParams.get('id');
-            $( window ).on( "load", function() {
-                var html = "";
-                $.ajax({
-                    contentType: 'GET',
-                    url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+id,
-                    dataType: 'json',
+    $(document).ready(function () {
+    const roomRate = 0;
+        var id = (new URL(location.href)).searchParams.get('id');
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                contentType: 'GET',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+id,
+                dataType: 'json',
 
-                    success: function (data) {
-                    //var roomRate = data.Rate;
-                    $("#roomRate").html('&#8358;'+data.Rate);
-                    $("#roomType").html(data.CategoryName);
-                        sessionStorage.setItem('Rate',data.Rate);
-                        sessionStorage.setItem('RoomType',data.CategoryName);
+                success: function (data) {
+                //var roomRate = data.Rate;
+                $("#roomRate").html('&#8358;'+data.Rate);
+                $("#roomType").html(data.CategoryName);
+                    sessionStorage.setItem('Rate',data.Rate);
+                    sessionStorage.setItem('RoomType',data.CategoryName);
 
-                    //$('#roomRate').number(data.Rate);
-                    //console.log(data.Rate);
-                   },
-                   error: function (xhr) {
-                       //alert(xhr.message);
-                        console.log(xhr.message);
-                   }
-                });
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                },
+                error: function (xhr) {
+                    //alert(xhr.message);
+                    console.log(xhr.message);
+                }
             });
         });
+    });
 
 
-         //BookNowSingle() id="roomRate" id="guests" id="children" id="checkInDate" id="checkOutDate"
+        //BookNowSingle() id="roomRate" id="guests" id="children" id="checkInDate" id="checkOutDate"
         function SaveBookingMultipleSession() {
-       //var roomCategory = (new URL(location.href)).searchParams.get('id');
+        //var roomCategory = (new URL(location.href)).searchParams.get('id');
 
-            const noOfRooms = 1;
-            roomRate = sessionStorage.getItem('Rate');
-            roomType = sessionStorage.getItem('RoomType');
-            //const singleTotal = document.getElementById('singleTotal');
-            const adults = document.getElementById('guests').value;
-            const children = document.getElementById('children').value;
-            const checkInDate = new Date(document.getElementById("checkInDate").value);
-            const checkOutDate = new Date(document.getElementById("checkOutDate").value);
+        const noOfRooms = 1;
+        roomRate = sessionStorage.getItem('Rate');
+        roomType = sessionStorage.getItem('RoomType');
+        //const singleTotal = document.getElementById('singleTotal');
+        const adults = document.getElementById('guests').value;
+        const children = document.getElementById('children').value;
+        const checkInDate = new Date(document.getElementById("checkInDate").value);
+        const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
-            //roomRate = 45000; // Will be deleted later
-            const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noOfRooms;
-            //const nights = checkInDate * checkOutDate
-            bookingData = {Rate: roomRate, SingleTotal: singleTotal, Adults: adults, Children: children,
-                CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType}
+        //roomRate = 45000; // Will be deleted later
+        const nights = checkOutDate.getDate() - checkInDate.getDate();
+        singleTotal = roomRate * nights * noOfRooms;
+        //const nights = checkInDate * checkOutDate
+        bookingData = {Rate: roomRate, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType}
 
-                    //document.getElementById("demo").innerHTML = time;
-                    sessionStorage.setItem('BookingInfoObj', JSON.stringify(bookingData));
+                //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoObj', JSON.stringify(bookingData));
 
-                window.location.href = 'checkout/cart.html';
+            window.location.href = 'checkout/cart.html';
 
-             }
-// All Increament /Decreament STARTS here
+            }
+
+
+    // All Increament /Decreament STARTS here
     function increaseValue1() {
-       var value = parseInt(document.getElementById('number1').value, 10);
+       var value = parseInt(document.getElementById('noORooms1').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('number1').value = value;
+       document.getElementById('noORooms1').value = value;
     }
 
     function decreaseValue1() {
-        var value = parseInt(document.getElementById('number1').value, 10);
+        var value = parseInt(document.getElementById('noORooms1').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -112,11 +114,40 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('number1').value = value;
+               document.getElementById('noORooms1').value = value;
           }
 // All Increament /Decreament Ends here
     </script>
 
+
+    <!--All Add Rooms STARTS here-->
+    <script type="text/javascript">
+
+        // Add Room 1 STARTS
+        var count = 1;
+        function AddRoom1() {
+            const noORooms-1 = sessionStorage.getItem('noORooms-1');
+            const noORoomsAvailable-1 = sessionStorage.getItem('noORoomsAvailable-1');
+            const rate-1 = sessionStorage.getItem('Rate-1');
+            const roomType-1 = sessionStorage.getItem('RoomType-1');
+            const adults = document.getElementById('guests').value;
+            const children = document.getElementById('children').value;
+            const checkInDate = new Date(document.getElementById("checkInDate").value);
+            const checkOutDate = new Date(document.getElementById("checkOutDate").value);
+
+            const nights = checkOutDate.getDate() - checkInDate.getDate();
+            singleTotal = roomRate * nights * noORooms-1;
+
+            bookingDataLst = {Rate: rate-1, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-1, QTY: noORooms-1}
+
+                //document.getElementById("demo").innerHTML = time;
+            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+                    //window.location.href = 'checkout/cart.html';
+        }
+        // Add Room 1 ENDS
+    </script>
+    <!--All Add Rooms STARTS here-->
 </head>
 
 <body>
@@ -260,21 +291,21 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="roomName-1">Deluxe Room</h2>
-                            <h4 id="rate_1">&#8358;40,000 <span>/ Night</span></h4>
+                            <h2 id="RoomType-1">Deluxe Room</h2>
+                            <h4 id="Rate-1">&#8358;40,000 <span>/ Night</span></h4>
                             <div class="room-feature">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
                                 <h6>Services: <span>Wifi, smart tv ...</span></h6> 
-                                &nbsp;<h4 id="noORooms-1" class=""> 15 <span> Rooms available</span></h4>
+                                <h6 id="noORoomsAvailable-1" class="">Available Rooms: <span> 15</span></h6>
                             </div>
                             <div class="mb-1">
                                 <fieldset class="rooms-holder">
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue1()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="number1" min="1" value="1"  style="width:75px;"/>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms1" min="1" value="1"  style="width:75px;"/>
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue1()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1()">Add Room</div>
                                     </div>
@@ -417,23 +448,23 @@
                                     <div class="col-6">
                                         <select name="adults" id="guests" class="form-control">
                                             <option value="adults">Adults</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <select name="children" id="children" class="form-control">
                                             <option value="children">Children</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
                                         </select>
                                     </div>
                                 </div>
