@@ -40,21 +40,168 @@
 
     $(document).ready(function () {
     const roomRate = 0;
-        var id = (new URL(location.href)).searchParams.get('id');
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'deluxe';
         $( window ).on( "load", function() {
             var html = "";
             $.ajax({
                 contentType: 'GET',
-                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/deluxe',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+theRoomType,
                 dataType: 'json',
 
                 success: function (data) {
                 //var roomRate = data.Rate;
-                $("#rate-1").html('&#8358;'+data.Rate);
-                $("#roomType-1").html(data.CategoryName);
-                    sessionStorage.setItem('Rate', data.Rate);
-                    sessionStorage.setItem('RoomType', data.CategoryName);
-                    sessionStorage.setItem('AvailableCount', data.AvailableCount);
+
+                $("#rate-1").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+                $("#roomType-1").html(data.CategoryName+' Room');
+                    sessionStorage.setItem('Rate1', data.Rate);
+                    sessionStorage.setItem('RoomType1', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount1', data.AvailableCount);
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                },
+                error: function (xhr) {
+                    //alert(xhr.message);
+                    console.log(xhr.message);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+    const roomRate = 0;
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'executive';
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                contentType: 'GET',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+theRoomType,
+                dataType: 'json',
+
+                success: function (data) {
+                //var roomRate = data.Rate;
+                $("#rate-2").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+                $("#roomType-2").html(data.CategoryName+' Room');
+                    sessionStorage.setItem('Rate2', data.Rate);
+                    sessionStorage.setItem('RoomType2', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount2', data.AvailableCount);
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                },
+                error: function (xhr) {
+                    //alert(xhr.message);
+                    console.log(xhr.message);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+    const roomRate = 0;
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'vip';
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                contentType: 'GET',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+theRoomType,
+                dataType: 'json',
+
+                success: function (data) {
+                //var roomRate = data.Rate;
+                $("#rate-3").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+                $("#roomType-3").html(data.CategoryName+' Room');
+                    sessionStorage.setItem('Rate3', data.Rate);
+                    sessionStorage.setItem('RoomType3', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount3', data.AvailableCount);
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                },
+                error: function (xhr) {
+                    //alert(xhr.message);
+                    console.log(xhr.message);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+    const roomRate = 0;
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'super executive';
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                contentType: 'GET',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+theRoomType,
+                dataType: 'json',
+
+                success: function (data) {
+                //var roomRate = data.Rate;
+                $("#rate-4").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+                $("#roomType-4").html(data.CategoryName+' Room');
+                    sessionStorage.setItem('Rate4', data.Rate);
+                    sessionStorage.setItem('RoomType4', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount4', data.AvailableCount);
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                },
+                error: function (xhr) {
+                    //alert(xhr.message);
+                    console.log(xhr.message);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+    const roomRate = 0;
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'Penthouse';
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                contentType: 'GET',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+theRoomType,
+                dataType: 'json',
+
+                success: function (data) {
+                //var roomRate = data.Rate;
+                $("#rate-5").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+                $("#roomType-5").html(data.CategoryName+' Suites');
+                    sessionStorage.setItem('Rate5', data.Rate);
+                    sessionStorage.setItem('RoomType5', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount5', data.AvailableCount);
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                },
+                error: function (xhr) {
+                    //alert(xhr.message);
+                    console.log(xhr.message);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+    const roomRate = 0;
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'eze aro';
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                contentType: 'GET',
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+theRoomType,
+                dataType: 'json',
+
+                success: function (data) {
+                //var roomRate = data.Rate;
+                $("#rate-6").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+                $("#roomType-6").html(data.CategoryName+' Royal Suites');
+                    sessionStorage.setItem('Rate6', data.Rate);
+                    sessionStorage.setItem('RoomType6', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount6', data.AvailableCount);
                 //$('#roomRate').number(data.Rate);
                 //console.log(data.Rate);
                 },
@@ -253,10 +400,10 @@
         // Add Room 2 STARTS
 
         function AddRoom1() {
-            const noORooms-1 = document.getElementById('noORooms-1');
-            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-1');
-            const rate-1 = document.getElementById('rate-1');
-            const roomType-1 = document.getElementById('roomType-1');
+            const noORooms-1 = document.getElementById('noORooms-1').value;
+            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-1').value;
+            const rate-1 = document.getElementById('rate-1').value;
+            const roomType-1 = document.getElementById('roomType-1').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -276,10 +423,10 @@
 
     <script type="text/javascript">
         function AddRoom2() {
-            const noORooms-2 = document.getElementById('noORooms-2');
-            const noORoomsAvailable-2 = document.getElementById('noORoomsAvailable-2');
-            const rate-2 = document.getElementById('rate-2');
-            const roomType-2 = document.getElementById('roomType-2');
+            const noORooms-2 = document.getElementById('noORooms-2').value;
+            const noORoomsAvailable-2 = document.getElementById('noORoomsAvailable-2').value;
+            const rate-2 = document.getElementById('rate-2').value;
+            const roomType-2 = document.getElementById('roomType-2').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -300,10 +447,10 @@
     <script type="text/javascript">
 
         function AddRoom3() {
-            const noORooms-3 = document.getElementById('noORooms-3');
-            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-3');
-            const rate-3 = document.getElementById('rate-3');
-            const roomType-3 = document.getElementById('roomType-3');
+            const noORooms-3 = document.getElementById('noORooms-3').value;
+            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-3').value;
+            const rate-3 = document.getElementById('rate-3').value;
+            const roomType-3 = document.getElementById('roomType-3').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -324,10 +471,10 @@
     <script type="text/javascript">
 
         function AddRoom4() {
-            const noORooms-4 = document.getElementById('noORooms-4');
-            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-4');
-            const rate-4 = document.getElementById('rate-4');
-            const roomType-4 = document.getElementById('roomType-4');
+            const noORooms-4 = document.getElementById('noORooms-4').value;
+            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-4').value;
+            const rate-4 = document.getElementById('rate-4').value;
+            const roomType-4 = document.getElementById('roomType-4').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -348,10 +495,10 @@
     <script type="text/javascript">
 
         function AddRoom5() {
-            const noORooms-5 = document.getElementById('noORooms-5');
-            const noORoomsAvailable-5 = document.getElementById('noORoomsAvailable-5');
-            const rate-5 = document.getElementById('rate-5');
-            const roomType-5 = document.getElementById('roomType-5');
+            const noORooms-5 = document.getElementById('noORooms-5').value;
+            const noORoomsAvailable-5 = document.getElementById('noORoomsAvailable-5').value;
+            const rate-5 = document.getElementById('rate-5').value;
+            const roomType-5 = document.getElementById('roomType-5').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -372,10 +519,10 @@
     <script type="text/javascript">
 
         function AddRoom6() {
-            const noORooms-6 = document.getElementById('noORooms-6');
-            const noORoomsAvailable-6 = document.getElementById('noORoomsAvailable-6');
-            const rate-6 = document.getElementById('rate-6');
-            const roomType-1 = document.getElementById('roomType-6');
+            const noORooms-6 = document.getElementById('noORooms-6').value;
+            const noORoomsAvailable-6 = document.getElementById('noORoomsAvailable-6').value;
+            const rate-6 = document.getElementById('rate-6').value;
+            const roomType-1 = document.getElementById('roomType-6').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
