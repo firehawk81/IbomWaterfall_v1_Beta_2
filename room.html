@@ -45,16 +45,16 @@
             var html = "";
             $.ajax({
                 contentType: 'GET',
-                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/'+id,
+                url: 'https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/RoomDetails/deluxe',
                 dataType: 'json',
 
                 success: function (data) {
                 //var roomRate = data.Rate;
-                $("#roomRate").html('&#8358;'+data.Rate);
-                $("#roomType").html(data.CategoryName);
-                    sessionStorage.setItem('Rate',data.Rate);
-                    sessionStorage.setItem('RoomType',data.CategoryName);
-
+                $("#rate-1").html('&#8358;'+data.Rate);
+                $("#roomType-1").html(data.CategoryName);
+                    sessionStorage.setItem('Rate', data.Rate);
+                    sessionStorage.setItem('RoomType', data.CategoryName);
+                    sessionStorage.setItem('AvailableCount', data.AvailableCount);
                 //$('#roomRate').number(data.Rate);
                 //console.log(data.Rate);
                 },
@@ -255,8 +255,8 @@
         function AddRoom1() {
             const noORooms-1 = document.getElementById('noORooms-1');
             const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-1');
-            const rate-1 = document.getElementById('Rate-1');
-            const roomType-1 = document.getElementById('RoomType-1');
+            const rate-1 = document.getElementById('rate-1');
+            const roomType-1 = document.getElementById('roomType-1');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -278,8 +278,8 @@
         function AddRoom2() {
             const noORooms-2 = document.getElementById('noORooms-2');
             const noORoomsAvailable-2 = document.getElementById('noORoomsAvailable-2');
-            const rate-2 = document.getElementById('Rate-2');
-            const roomType-2 = document.getElementById('RoomType-2');
+            const rate-2 = document.getElementById('rate-2');
+            const roomType-2 = document.getElementById('roomType-2');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -302,8 +302,8 @@
         function AddRoom3() {
             const noORooms-3 = document.getElementById('noORooms-3');
             const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-3');
-            const rate-3 = document.getElementById('Rate-3');
-            const roomType-3 = document.getElementById('RoomType-3');
+            const rate-3 = document.getElementById('rate-3');
+            const roomType-3 = document.getElementById('roomType-3');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -326,8 +326,8 @@
         function AddRoom4() {
             const noORooms-4 = document.getElementById('noORooms-4');
             const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-4');
-            const rate-4 = document.getElementById('Rate-4');
-            const roomType-4 = document.getElementById('RoomType-4');
+            const rate-4 = document.getElementById('rate-4');
+            const roomType-4 = document.getElementById('roomType-4');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -350,8 +350,8 @@
         function AddRoom5() {
             const noORooms-5 = document.getElementById('noORooms-5');
             const noORoomsAvailable-5 = document.getElementById('noORoomsAvailable-5');
-            const rate-5 = document.getElementById('Rate-5');
-            const roomType-5 = document.getElementById('RoomType-5');
+            const rate-5 = document.getElementById('rate-5');
+            const roomType-5 = document.getElementById('roomType-5');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -374,8 +374,8 @@
         function AddRoom6() {
             const noORooms-6 = document.getElementById('noORooms-6');
             const noORoomsAvailable-6 = document.getElementById('noORoomsAvailable-6');
-            const rate-6 = document.getElementById('Rate-6');
-            const roomType-1 = document.getElementById('RoomType-6');
+            const rate-6 = document.getElementById('rate-6');
+            const roomType-1 = document.getElementById('roomType-6');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
@@ -537,8 +537,8 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="RoomType-1">Deluxe Room</h2>
-                            <h4 id="Rate-1">&#8358;50,000 <span>/ Night</span></h4>
+                            <h2 id="roomType-1">Deluxe Room</h2>
+                            <h4 id="rate-1">&#8358;50,000 <span>/ Night</span></h4>
                             <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
@@ -568,8 +568,8 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="RoomType-2">Executive</h2>
-                            <h4 id="Rate-2">&#8358;65,000 <span>/ Night</span></h4>
+                            <h2 id="roomType-2">Executive</h2>
+                            <h4 id="rate-2">&#8358;65,000 <span>/ Night</span></h4>
                             <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
@@ -600,8 +600,8 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="RoomType-3">VIP</h2>
-                            <h4 id="Rate-3">&#8358;80,000 <span>/ Night</span></h4>
+                            <h2 id="roomType-3">VIP</h2>
+                            <h4 id="rate-3">&#8358;80,000 <span>/ Night</span></h4>
                             <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
@@ -632,8 +632,8 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="RoomType-4">Super Executive</h2>
-                            <h4 id="Rate-4">&#8358;70,000 <span>/ Night</span></h4>
+                            <h2 id="roomType-4">Super Executive</h2>
+                            <h4 id="rate-4">&#8358;70,000 <span>/ Night</span></h4>
                             <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
@@ -664,8 +664,8 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="RoomType-5">Penthouse</h2>
-                            <h4 id="Rate-5">&#8358;300,000 <span>/ Night</span></h4>
+                            <h2 id="roomType-5">Penthouse</h2>
+                            <h4 id="rate-5">&#8358;300,000 <span>/ Night</span></h4>
                             <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
@@ -696,8 +696,8 @@
                         </div>
                         <!-- Room Content -->
                         <div class="room-content">
-                            <h2 id="RoomType-6">Eze Aro</h2>
-                            <h4 id="Rate-6">&#8358;350,000 <span>/ Night</span></h4>
+                            <h2 id="roomType-6">Eze Aro</h2>
+                            <h4 id="rate-6">&#8358;350,000 <span>/ Night</span></h4>
                             <div class="room-feature mb-0">
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
