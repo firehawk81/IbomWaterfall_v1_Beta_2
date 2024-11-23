@@ -51,7 +51,7 @@
 
                 success: function (data) {
                 //var roomRate = data.Rate;
-
+                 
                 $("#rate-1").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
                 $("#roomType-1").html(data.CategoryName+' Room');
                     sessionStorage.setItem('Rate1', data.Rate);
@@ -244,14 +244,14 @@
 
     // All Increament /Decreament STARTS here
     function increaseValue1() {
-       var value = parseInt(document.getElementById('noORooms1').value, 10);
+       var value = parseInt(document.getElementById('noORooms-1').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('noORooms1').value = value;
+       document.getElementById('noORooms-1').value = value;
     }
 
     function decreaseValue1() {
-        var value = parseInt(document.getElementById('noORooms1').value, 10);
+        var value = parseInt(document.getElementById('noORooms-1').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -264,19 +264,19 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('noORooms1').value = value;
+               document.getElementById('noORooms-1').value = value;
           }
 
 
     function increaseValue2() {
-       var value = parseInt(document.getElementById('noORooms2').value, 10);
+       var value = parseInt(document.getElementById('noORooms-2').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('noORooms2').value = value;
+       document.getElementById('noORooms-2').value = value;
     }
 
     function decreaseValue2() {
-        var value = parseInt(document.getElementById('noORooms2').value, 10);
+        var value = parseInt(document.getElementById('noORooms-2').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -289,19 +289,19 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('noORooms2').value = value;
+               document.getElementById('noORooms-2').value = value;
           }
 
 
     function increaseValue3() {
-       var value = parseInt(document.getElementById('noORooms3').value, 10);
+       var value = parseInt(document.getElementById('noORooms-3').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('noORooms3').value = value;
+       document.getElementById('noORooms-3').value = value;
     }
 
     function decreaseValue3() {
-        var value = parseInt(document.getElementById('noORooms3').value, 10);
+        var value = parseInt(document.getElementById('noORooms-3').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -314,19 +314,19 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('noORooms3').value = value;
+               document.getElementById('noORooms-3').value = value;
           }
 
 
     function increaseValue4() {
-       var value = parseInt(document.getElementById('noORooms4').value, 10);
+       var value = parseInt(document.getElementById('noORooms-4').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('noORooms4').value = value;
+       document.getElementById('noORooms-4').value = value;
     }
 
     function decreaseValue4() {
-        var value = parseInt(document.getElementById('noORooms4').value, 10);
+        var value = parseInt(document.getElementById('noORooms-4').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -339,19 +339,19 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('noORooms4').value = value;
+               document.getElementById('noORooms-4').value = value;
           }
 
 
     function increaseValue5() {
-       var value = parseInt(document.getElementById('noORooms5').value, 10);
+       var value = parseInt(document.getElementById('noORooms-5').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('noORooms5').value = value;
+       document.getElementById('noORooms-5').value = value;
     }
 
     function decreaseValue5() {
-        var value = parseInt(document.getElementById('noORooms5').value, 10);
+        var value = parseInt(document.getElementById('noORooms-5').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -364,18 +364,18 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('noORooms1').value = value;
+               document.getElementById('noORooms-5').value = value;
           }
 
     function increaseValue6() {
-       var value = parseInt(document.getElementById('noORooms6').value, 10);
+       var value = parseInt(document.getElementById('noORooms-6').value, 10);
        value = isNaN(value) ? 0 : value;
        value++;
-       document.getElementById('noORooms6').value = value;
+       document.getElementById('noORooms-6').value = value;
     }
 
     function decreaseValue6() {
-        var value = parseInt(document.getElementById('noORooms6').value, 10);
+        var value = parseInt(document.getElementById('noORooms-6').value, 10);
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
         value--;
@@ -388,7 +388,7 @@
                  newValue = 1;
                  value = newValue;
             }
-               document.getElementById('noORooms6').value = value;
+               document.getElementById('noORooms-6').value = value;
           }
 // All Increament /Decreament Ends here
     </script>
@@ -400,20 +400,20 @@
         // Add Room 2 STARTS
 
         function AddRoom1() {
-            const noORooms-1 = document.getElementById('noORooms-1').value;
-            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-1').value;
-            const rate-1 = document.getElementById('rate-1').value;
-            const roomType-1 = document.getElementById('roomType-1').value;
+            const noORooms1 = document.getElementById('noORooms-1').value;
+            const noORoomsAvailable1 = document.getElementById('noORoomsAvailable-1').value;
+            const rate1 = sessionStorage.getItem('Rate1');
+            const roomType1 = document.getElementById('roomType-1').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-1;
+            singleTotal = rate1 * nights * noORooms1;
 
-            bookingDataLst = {Rate: rate-1, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-1, QTY: noORooms-1}
+            bookingDataLst = {Rate: rate1, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType1, QTY: noORooms1}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
@@ -423,20 +423,20 @@
 
     <script type="text/javascript">
         function AddRoom2() {
-            const noORooms-2 = document.getElementById('noORooms-2').value;
-            const noORoomsAvailable-2 = document.getElementById('noORoomsAvailable-2').value;
-            const rate-2 = document.getElementById('rate-2').value;
-            const roomType-2 = document.getElementById('roomType-2').value;
+            const noORooms2 = document.getElementById('noORooms-2').value;
+            const noORoomsAvailable2 = document.getElementById('noORoomsAvailable-2').value;
+            const rate2 = document.getElementById('rate-2').value;
+            const roomType2 = document.getElementById('roomType-2').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-2;
+            var singleTotal = roomRate * (nights * noORooms2);
 
-            bookingDataLst = {Rate: rate-2, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-1, QTY: noORooms-2}
+            bookingDataLst = {Rate: rate2, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType1, QTY: noORooms2}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
@@ -447,20 +447,20 @@
     <script type="text/javascript">
 
         function AddRoom3() {
-            const noORooms-3 = document.getElementById('noORooms-3').value;
-            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-3').value;
-            const rate-3 = document.getElementById('rate-3').value;
-            const roomType-3 = document.getElementById('roomType-3').value;
+            const noORooms3 = document.getElementById('noORooms-3').value;
+            const noORoomsAvailable1 = document.getElementById('noORoomsAvailable-3').value;
+            const rate3 = document.getElementById('rate-3').value;
+            const roomType3 = document.getElementById('roomType-3').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-3;
+            singleTotal = roomRate * nights * noORooms3;
 
-            bookingDataLst = {Rate: rate-1, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-3, QTY: noORooms-3}
+            bookingDataLst = {Rate: rate3, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType3, QTY: noORooms3}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
@@ -471,20 +471,20 @@
     <script type="text/javascript">
 
         function AddRoom4() {
-            const noORooms-4 = document.getElementById('noORooms-4').value;
-            const noORoomsAvailable-1 = document.getElementById('noORoomsAvailable-4').value;
-            const rate-4 = document.getElementById('rate-4').value;
-            const roomType-4 = document.getElementById('roomType-4').value;
+            const noORooms4 = document.getElementById('noORooms-4').value;
+            const noORoomsAvailable1 = document.getElementById('noORoomsAvailable-4').value;
+            const rate4 = document.getElementById('rate-4').value;
+            const roomType4 = document.getElementById('roomType-4').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-4;
+            singleTotal = roomRate * nights * noORooms4;
 
-            bookingDataLst = {Rate: rate-4, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-4, QTY: noORooms-4}
+            bookingDataLst = {Rate: rate4, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType4, QTY: noORooms4}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
@@ -495,20 +495,20 @@
     <script type="text/javascript">
 
         function AddRoom5() {
-            const noORooms-5 = document.getElementById('noORooms-5').value;
-            const noORoomsAvailable-5 = document.getElementById('noORoomsAvailable-5').value;
-            const rate-5 = document.getElementById('rate-5').value;
-            const roomType-5 = document.getElementById('roomType-5').value;
+            const noORooms5 = document.getElementById('noORooms-5').value;
+            const noORoomsAvailable5 = document.getElementById('noORoomsAvailable-5').value;
+            const rate5 = document.getElementById('rate-5').value;
+            const roomType5 = document.getElementById('roomType-5').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-5;
+            singleTotal = roomRate * nights * noORooms5;
 
-            bookingDataLst = {Rate: rate-5, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-5, QTY: noORooms-5}
+            bookingDataLst = {Rate: rate5, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType5, QTY: noORooms5}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
@@ -519,20 +519,20 @@
     <script type="text/javascript">
 
         function AddRoom6() {
-            const noORooms-6 = document.getElementById('noORooms-6').value;
-            const noORoomsAvailable-6 = document.getElementById('noORoomsAvailable-6').value;
-            const rate-6 = document.getElementById('rate-6').value;
-            const roomType-1 = document.getElementById('roomType-6').value;
+            const noORooms6 = document.getElementById('noORooms-6').value;
+            const noORoomsAvailable6 = document.getElementById('noORoomsAvailable-6').value;
+            const rate6 = document.getElementById('rate-6').value;
+            const roomType1 = document.getElementById('roomType-6').value;
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
             const checkInDate = new Date(document.getElementById("checkInDate").value);
             const checkOutDate = new Date(document.getElementById("checkOutDate").value);
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
-            singleTotal = roomRate * nights * noORooms-6;
+            singleTotal = roomRate * nights * noORooms6;
 
-            bookingDataLst = {Rate: rate-6, SingleTotal: singleTotal, Adults: adults, Children: children,
-            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType-6, QTY: noORooms-6}
+            bookingDataLst = {Rate: rate6, SingleTotal: singleTotal, Adults: adults, Children: children,
+            CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType6, QTY: noORooms6}
 
                 //document.getElementById("demo").innerHTML = time;
             sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
@@ -698,7 +698,7 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue1()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms1" min="1" value="1"  style="width:65px;"/>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-1" min="1" value="1"  style="width:65px;"/>
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue1()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1();" >Add Room</div>
                                     </div>
@@ -729,7 +729,7 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue2()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms2" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-2" min="1" value="1" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue2()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom2()">Add Room</div>
                                     </div>
@@ -761,7 +761,7 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue3()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms3" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-3" min="1" value="1" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue3()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom3()">Add Room</div>
                                     </div>
@@ -793,7 +793,7 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue4()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms4" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-4" min="1" value="1" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue4()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom4()">Add Room</div>
                                     </div>
@@ -825,7 +825,7 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue5()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms5" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-5" min="1" value="1" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue5()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom5()">Add Room</div>
                                     </div>
@@ -857,7 +857,7 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue6()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms6" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-6" min="1" value="1" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue6()">&nbsp;+&nbsp;</div>
                                         <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom6()">Add Room</div>
                                     </div>
@@ -887,10 +887,10 @@
                                 <div class="input-daterange" id="datepicker">
                                     <div class="row no-gutters">
                                         <div class="col-6">
-                                            <input type="text" class="input-small form-control" id="checkInDate" name="checkInDate" placeholder="Check In">
+                                            <input type="date" class="input-small form-control" id="checkInDate" name="checkInDate" placeholder="Check In">
                                         </div>
                                         <div class="col-6">
-                                            <input type="text" class="input-small form-control" name="checkOutDate" placeholder="Check Out">
+                                            <input type="date" class="input-small form-control" id="checkOutDate" name="checkOutDate" placeholder="Check Out">
                                         </div>
                                     </div>
                                 </div>
@@ -933,7 +933,7 @@
                                 </div>
                             </div>-->
                             <div class="form-group">
-                                <a class="btn btn-dark text-white w-100" onclick="SaveBookingMultipleSession()">Book Now</a>
+                                <a href="checkout/cart.html" class="btn btn-dark text-white w-100">Book Now</a> <!--onclick="SaveBookingMultipleSession()"-->
                             </div>
                         </form>
                     </div>

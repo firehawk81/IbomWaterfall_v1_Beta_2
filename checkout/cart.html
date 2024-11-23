@@ -11,7 +11,8 @@
 <link rel="stylesheet" type="text/css" href="styles/cart.css">
 <link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
     <link rel="icon" href="../img/core-img/ibw-logo.png">
-
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
 
     <style type="text/css">
 
@@ -24,8 +25,56 @@
     </style>
 
     <script type="text/javascript">
-        var data = sessionStorage('BookingInfoObj');
-        console.log(data);
+
+
+    var roomRate;
+    var roomType;
+
+    $(document).ready(function () {
+    const roomRate = 0;
+        //var id = (new URL(location.href)).searchParams.get('id');
+        const theRoomType = 'deluxe';
+        $( window ).on( "load", function() {
+            var html = "";
+            $.ajax({
+                success: function (data) {
+                //var roomRate = data.Rate;
+            /*
+                bookingDataLst = {Rate: rate1, SingleTotal: singleTotal, Adults: adults, Children: children,
+                CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType1, QTY: noORooms1}
+
+
+                //now we retrieve the object again, but in a string form.
+                var customersDataString = sessionStorage.getItem("customersData");
+                console.log(customersDataString);
+
+                //to get the object we have to parse it.
+                var customersData = JSON.parse(customersDataString);
+                console.log(customersData);
+            */
+                var data = sessionStorage.getItem('BookingInfoLst');
+                var bookingData = JSON.parse(data);
+                console.log(data);
+                if (bookingData != null) {
+
+                    //document.getElementById("result").innerHTML = sessionStorage.getItem("textvalue");
+                    document.getElementById('roomRate').innerHTML = '&#8358;'+bookingData.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                    document.getElementById('roomType').value = bookingData.RoomType;
+                    document.getElementById('quantity_input').value = bookingData.QTY;
+                    document.getElementById('roomRateTotal').innerHTML = '&#8358;'+bookingData.SingleTotal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                } else {
+
+                    alert('Please choose a Check-in and Check-out date and try again')
+                    window.location.href = '../room.html';
+                }
+                //$('#roomRate').number(data.Rate);
+                //console.log(data.Rate);
+                }
+
+            });
+        });
+    });
+
     </script>
 
 
@@ -150,10 +199,10 @@
 			<div class="row">
 				<div class="col">
 					<div class="cart_bar d-flex flex-row align-items-center justify-content-start">
-						<div class="cart_bar_title_name">Product</div>
+						<div class="cart_bar_title_name">Room</div>
 						<div class="cart_bar_title_content ml-auto">
 							<div class="cart_bar_title_content_inner d-flex flex-row align-items-center justify-content-end">
-								<div class="cart_bar_title_price">Price</div>
+								<div class="cart_bar_title_price">Rate</div>
 								<div class="cart_bar_title_quantity">No. of Rooms</div>
 								<div class="cart_bar_title_total">Total</div>
 								<div class="cart_bar_title_button"></div>
@@ -170,23 +219,23 @@
 								<!-- Product Image -->
 								<div class="cart_product_image"><img src="images/cart_product_1.jpg" height="135" alt=""></div>
 								<!-- Product Name -->
-								<div class="cart_product_name"><a href="room.html?id=deluxe">Deluxe Room</a></div>
+								<div id="roomType" class="cart_product_name"><a href="room.html?id=deluxe"></a></div>
 								<div class="cart_product_info ml-auto">
 									<div class="cart_product_info_inner d-flex flex-row align-items-center justify-content-md-end justify-content-start">
 										<!-- Product Price -->
-										<div class="cart_product_price">&#8358;45,000.00</div>
+										<div id="roomRate" class="cart_product_price"></div>
 										<!-- Product Quantity -->
 										<div class="product_quantity_container">
 											<div class="product_quantity clearfix">
 												<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-												<div class="quantity_buttons">
+												<!--<div class="quantity_buttons">
 													<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
 													<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-												</div>
+												</div>-->
 											</div>
 										</div>
 										<!-- Products Total Price -->
-										<div class="cart_product_total">&#8358;45,000.00</div>
+										<div id="roomRateTotal" class="cart_product_total">&#8358;45,000.00</div>
 										<!-- Product Cart Trash Button -->
 										<div class="cart_product_button">
 											<button class="cart_product_remove"><img src="images/trash.png" alt=""></button>
@@ -203,7 +252,7 @@
 					<div class="cart_control_bar d-flex flex-md-row flex-column align-items-start justify-content-start">
 						<button class="button_clear cart_button">clear cart</button>
 						<button class="button_update cart_button">update cart</button>
-						<button class="button_update cart_button_2 ml-md-auto">continue shopping</button>
+						<button class="button_update cart_button_2 ml-md-auto">Add More Rooms</button>
 					</div>
 				</div>
 			</div>
