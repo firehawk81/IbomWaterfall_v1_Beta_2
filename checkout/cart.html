@@ -29,7 +29,7 @@
 
     var roomRate;
     var roomType;
-
+        var finalTotal;
     $(document).ready(function () {
     const roomRate = 0;
         //var id = (new URL(location.href)).searchParams.get('id');
@@ -59,9 +59,14 @@
 
                     //document.getElementById("result").innerHTML = sessionStorage.getItem("textvalue");
                     document.getElementById('roomRate').innerHTML = '&#8358;'+bookingData.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 });
-                    document.getElementById('roomType').value = bookingData.RoomType;
+                    document.getElementById('roomType').innerHTML = bookingData.RoomType;
                     document.getElementById('quantity_input').value = bookingData.QTY;
                     document.getElementById('roomRateTotal').innerHTML = '&#8358;'+bookingData.SingleTotal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                    document.getElementById('subTotal').innerHTML = '&#8358;'+bookingData.SingleTotal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                    document.getElementById('total').innerHTML = '&#8358;'+bookingData.SingleTotal.toLocaleString(undefined, { maximumFractionDigits: 2 });
+
+                    finalTotal = finalTotal + bookingData.SingleTotal;
+                    sessionStorage.setItem('FinalTotal',finalTotal);
                 } else {
 
                     alert('Please choose a Check-in and Check-out date and try again')
@@ -235,7 +240,7 @@
 											</div>
 										</div>
 										<!-- Products Total Price -->
-										<div id="roomRateTotal" class="cart_product_total">&#8358;45,000.00</div>
+										<div id="roomRateTotal" class="cart_product_total"></div>
 										<!-- Product Cart Trash Button -->
 										<div class="cart_product_button">
 											<button class="cart_product_remove"><img src="images/trash.png" alt=""></button>
@@ -274,15 +279,19 @@
 						<ul>
 							<li class="d-flex flex-row align-items-center justify-content-start">
 								<div class="cart_total_title">Subtotal</div>
-								<div class="cart_total_price ml-auto">&#8358;45,000.00</div>
+								<div id="subTotal" class="cart_total_price ml-auto">&#8358;45,000.00</div>
 							</li>
 							<li class="d-flex flex-row align-items-center justify-content-start">
-								<div class="cart_total_title">Shipping</div>
-								<div class="cart_total_price ml-auto">&#8358;5.00</div>
+								<div class="cart_total_title">Discount</div>
+								<div id="discount" class="cart_total_price ml-auto">0.00</div>
 							</li>
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_total_title">Tax (VAT)</div>
+                                <div id="vat" class="cart_total_price ml-auto">0.00</div>
+                            </li>
 							<li class="d-flex flex-row align-items-center justify-content-start">
 								<div class="cart_total_title">Total</div>
-								<div class="cart_total_price ml-auto">&#8358;95,000.00</div>
+								<div id="total" class="cart_total_price ml-auto"></div>
 							</li>
 						</ul>
 						<a href="checkout.html" class=" btn cart_total_button">proceed to checkout</a>
