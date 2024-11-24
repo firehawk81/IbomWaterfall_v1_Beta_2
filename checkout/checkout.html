@@ -52,50 +52,7 @@
     <script type="text/javascript">
     //FLUTTERWAVE InlineJS Ends Here
 
-         function SaveSession() {
 
-        const _firstName = document.getElementById("txtFirstName").value;
-        const _lastName = document.getElementById("txtLastName").value;
-        const _phone = document.getElementById("txtPhone").value;
-        const _email = document.getElementById("txtEmail").value;
-        const _address = document.getElementById("txtAddress").value;
-        const _state = document.getElementById("txtState").value;
-        const _city = document.getElementById("txtCity").value;
-        const _country = document.getElementById("country").value;
-        const _zipcode = document.getElementById("txtZipcode").value;
-        const _checkoutComment = document.getElementById("checkout_comment").value;
-
-
-
-        const _roomsLst = document.getElementById("txtRooms").value;
-        const _subTotal = document.getElementById("txtSubTotal").value;
-        const _vat = document.getElementById("txtVat").value;
-        const _total = document.getElementById("txtTotal").value;
-
-            //e.preventDefault();
-
-        const firstName = _firstName;
-        const lastName = _lastName;
-        const phone = _phone;
-        const email = _email;
-        const address = _address;
-        const state = _state;
-        const city = _city;
-        const country = _country;
-        const zipcode = _zipcode;
-        const checkoutComment = _checkoutComment;
-
-        const roomsLst = _roomsLst;
-        const subTotal = _subTotal;
-        const vat = _vat;
-        const total = _total;
-
-        //const refNo = sessionStorage('RefNo');
-
-        var obj = { FirstName: firstName, LastName: lastName, Phone: phone, Email: email, Address: address, State: state, City: city, Country: country, Zipcode: zipcode, Remark: checkoutComment, RoomsList: roomsLst, SubTotal: subTotal, Vat: vat, Total: total };
-            sessionStorage.setItem("Reservation", JSON.stringify(obj));
-
-        };
 
         const radio_flutterwave = document.getElementById("radio_flutterwave");
         const radio_budpay = document.getElementById("radio_budpay");
@@ -203,6 +160,55 @@
         });
         return true;
     }
+        function SaveSession() {
+
+        const _firstName = document.getElementById("txtFirstName").value;
+        const _lastName = document.getElementById("txtLastName").value;
+        const _phone = document.getElementById("txtPhone").value;
+        const _email = document.getElementById("txtEmail").value;
+        const _address = document.getElementById("txtAddress").value;
+        const _state = document.getElementById("txtState").value;
+        const _city = document.getElementById("txtCity").value;
+        const _country = document.getElementById("country").value;
+        const _zipcode = document.getElementById("txtZipcode").value;
+        const _checkoutComment = document.getElementById("checkout_comment").value;
+
+
+
+        const _roomsLst = document.getElementById("txtRooms").value;
+        const _subTotal = document.getElementById("txtSubTotal").value;
+        const _vat = document.getElementById("txtVat").value;
+        const _total = document.getElementById("txtTotal").value;
+
+            //e.preventDefault();
+
+        const firstName = _firstName;
+        const lastName = _lastName;
+        const phone = _phone;
+        const email = _email;
+        const address = _address;
+        const state = _state;
+        const city = _city;
+        const country = _country;
+        const zipcode = _zipcode;
+        const checkoutComment = _checkoutComment;
+
+        const roomsLst = _roomsLst;
+        const subTotal = _subTotal;
+        const vat = _vat;
+        const total = _total;
+
+        //const refNo = sessionStorage('RefNo');
+
+        var obj = { FirstName: firstName, LastName: lastName, Phone: phone, Email: email, Address: address, State: state, City: city, Country: country, Zipcode: zipcode, Remark: checkoutComment, RoomsList: roomsLst, SubTotal: subTotal, Vat: vat, Total: total };
+            sessionStorage.setItem('Reservation', JSON.stringify(obj));
+
+        }
+
+        function CheckOutAndPay() {
+            SaveSession();
+            window.location.href = 'inv.html';
+        }
     </script>    
     
 <div class="super_container">
@@ -625,23 +631,23 @@
                                 <div class="master payment_option"><a href="#"><img src="images/Flutterwave_Logo.png" height="40" alt=""></a></div>
                                 <label for="radio_flutterwave"></label>-->
 
-                                <a href="#" id="btnPayNowFlutterwave" type="submit" onclick="makePayment()" class=" btn btn-primary btn-block ">
+                                <!--<a href="#" id="btnPayNowFlutterwave" type="submit" onclick="makePayment()" class=" btn btn-primary btn-block ">
                                     <img src="images/Flutterwave_Logo.png" height="30" alt="">
-                                </a>
+                                </a>-->
 							</div>
 							<div>
                                 <!--<input type="radio" id="radio_budpay" name="regular_radio" class="regular_radio" checked>
                                 <div class="master payment_option"> <a href="#"> <img src="images/budpay-logo-primary.png" height="30" alt=""> </a></div>
                                 <label for="radio_budpay"> </label>-->
 
-                                <a href="#" id="btnPayNowBudpay" type="submit" onclick="payWithBudPay()" class=" btn btn-primary btn-block ">
+                                <!--<a href="#" id="btnPayNowBudpay" type="submit" onclick="payWithBudPay()" class=" btn btn-primary btn-block ">
                                     <img src="images/budpay-logo-mixed.png" height="30" alt="">
-                                </a>
+                                </a>-->
 							</div>
 							<!--<button id="btnPayNow" type="button" class="cart_total_button">Pay Now</button>-->
                             <!--<button id="btnPayNow" type="submit" onclick="payWithBudPay()" class="cart_total_button">
                             <img src="images/budpay-logo-mixed.png" height="30" alt=""></button>-->
-                            <!--<button id="btnPayNow" onclick="payWithBudPay()" class="cart_total_button">Pay Now</button>-->
+                            <button id="btnPayNow" onclick="CheckOutAndPay()" class="cart_total_button">Check Out</button>
 						</div>
 					</div>
 				</div>
