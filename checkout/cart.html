@@ -60,6 +60,7 @@
                     //document.getElementById("result").innerHTML = sessionStorage.getItem("textvalue");
                     document.getElementById('roomRate').innerHTML = '&#8358;'+bookingData.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 });
                     document.getElementById('roomType').innerHTML = bookingData.RoomType;
+                    document.getElementById('nights').value = bookingData.Nights;
                     document.getElementById('quantity_input').value = bookingData.QTY;
                     document.getElementById('roomRateTotal').innerHTML = '&#8358;'+bookingData.SingleTotal.toLocaleString(undefined, { maximumFractionDigits: 2 });
                     document.getElementById('subTotal').innerHTML = '&#8358;'+bookingData.SingleTotal.toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -82,6 +83,27 @@
 
     </script>
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+        const roomRate = 0;
+            //var id = (new URL(location.href)).searchParams.get('id');
+            //const theRoomType = 'Penthouse';
+            $( window ).on( "load", function() {
+                
+                $.ajax({
+                
+                    success: function (data) {
+
+                    sessionStorage.getItem('BookingInfoLst');
+                    var cartItem = sessionStorage.length
+                    document.getElementById('cart').value = cartItem;
+                    }
+                });
+            });
+        });
+
+    </script>
 
 </head>
 <body>
@@ -117,7 +139,7 @@
 							<img src="images/shopping-bag.svg" alt="">
 							<div class="cart_num_container">
 								<div class="cart_num_inner">
-									<div class="cart_num">1</div>
+									<div id="cart" class="cart_num"></div>
 								</div>
 							</div>
 						</div>
@@ -208,7 +230,8 @@
 						<div class="cart_bar_title_content ml-auto">
 							<div class="cart_bar_title_content_inner d-flex flex-row align-items-center justify-content-end">
 								<div class="cart_bar_title_price">Rate</div>
-								<div class="cart_bar_title_quantity">No. of Rooms</div>
+								<div class="cart_bar_title_quantity">Night(s)</div>
+                                <div class="cart_bar_title_quantity">No. of Rooms</div>
 								<div class="cart_bar_title_total">Total</div>
 								<div class="cart_bar_title_button"></div>
 							</div>
@@ -232,13 +255,22 @@
 										<!-- Product Quantity -->
 										<div class="product_quantity_container">
 											<div class="product_quantity clearfix">
-												<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
+                                                <input id="nights" type="text" pattern="[0-9]*" value="1">
 												<!--<div class="quantity_buttons">
 													<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
 													<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
 												</div>-->
 											</div>
 										</div>
+                                        <div class="product_quantity_container">
+                                            <div class="product_quantity clearfix">
+                                                <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
+                                                <!--<div class="quantity_buttons">
+                                                    <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+                                                    <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                                </div>-->
+                                            </div>
+                                        </div>
 										<!-- Products Total Price -->
 										<div id="roomRateTotal" class="cart_product_total"></div>
 										<!-- Product Cart Trash Button -->

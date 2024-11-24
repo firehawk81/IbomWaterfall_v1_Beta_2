@@ -416,10 +416,12 @@
             CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType1, QTY: noORooms1}
 
                 //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
+
+            
         }
-        </script>
+        </script> <!--AddRoom1();-->
 
     <script type="text/javascript">
         function AddRoom2() {
@@ -439,10 +441,10 @@
             CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType1, QTY: noORooms2}
 
                 //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
-    </script>
+    </script> <!--AddRoom2();-->
 
     <script type="text/javascript">
 
@@ -463,10 +465,10 @@
             CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType3, QTY: noORooms3}
 
                 //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
-    </script>
+    </script> <!--AddRoom3();-->
 
     <script type="text/javascript">
 
@@ -487,10 +489,10 @@
             CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType4, QTY: noORooms4}
 
                 //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
-    </script>
+    </script> <!--AddRoom4();-->
 
     <script type="text/javascript">
 
@@ -511,10 +513,10 @@
             CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType5, QTY: noORooms5}
 
                 //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
-    </script>
+    </script> <!--AddRoom5();-->
 
     <script type="text/javascript">
 
@@ -535,11 +537,140 @@
             CheckInDate: checkInDate, CheckOutDate: checkOutDate, Nights: nights, RoomType: roomType6, QTY: noORooms6}
 
                 //document.getElementById("demo").innerHTML = time;
-            sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
         }
         // Add Room 1 ENDS
-    </script>
+
+    </script>  <!--AddRoom6();-->
+
+    <script type="text/javascript">
+
+        function BookNow() {
+
+            const noORooms1 = document.getElementById('noORooms-1').value;
+            var add_item = JSON.parse(sessionStorage.getItem("BookingInfoLst"));
+            if(noORooms1 > 0 ) {
+
+                AddRoom1();
+
+                        // parse existing storage key or string representation of empty array
+                  var existingBookingInfoLst = JSON.parse(sessionStorage.getItem("BookingInfoLst") || '[]');
+                        // Add item if it's not already in the array, then store array again
+                  if (!existingBookingInfoLst.includes(add_item)) {
+                    existingBookingInfoLst.push(add_item);
+                    sessionStorage.setItem("BookingInfoLst", JSON.stringify(existingBookingInfoLst));
+                  } else {
+                        // or tell user it's already there
+                     console.log(add_item + ' already exists')
+                  }
+                        //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            }
+
+            const noORooms2 = document.getElementById('noORooms-2').value;
+            if(noORooms2 > 0 ) {
+
+                        // parse existing storage key or string representation of empty array
+                  var existingBookingInfoLst = JSON.parse(sessionStorage.getItem("BookingInfoLst") || '[]');
+                        // Add item if it's not already in the array, then store array again
+                  if (!existingBookingInfoLst.includes(add_item)) {
+                    existingBookingInfoLst.push(add_item);
+                    sessionStorage.setItem("BookingInfoLst", JSON.stringify(existingBookingInfoLst));
+                  } else {
+                        // or tell user it's already there
+                     console.log(add_item + ' already exists')
+                  }
+                        //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+                AddRoom2();
+                    //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            }
+
+            const noORooms3 = document.getElementById('noORooms-3').value;
+            if(noORooms3 > 0 ) {
+
+                        // parse existing storage key or string representation of empty array
+                  var existingBookingInfoLst = JSON.parse(sessionStorage.getItem("BookingInfoLst") || '[]');
+                        // Add item if it's not already in the array, then store array again
+                  if (!existingBookingInfoLst.includes(add_item)) {
+                    existingBookingInfoLst.push(add_item);
+                    sessionStorage.setItem("BookingInfoLst", JSON.stringify(existingBookingInfoLst));
+                  } else {
+                        // or tell user it's already there
+                     console.log(add_item + ' already exists')
+                  }
+                        //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+                AddRoom3();
+                    //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            }
+
+            const noORooms4 = document.getElementById('noORooms-4').value;
+            if(noORooms4 > 0 ) {
+
+                        // parse existing storage key or string representation of empty array
+                  var existingBookingInfoLst = JSON.parse(sessionStorage.getItem("BookingInfoLst") || '[]');
+                        // Add item if it's not already in the array, then store array again
+                  if (!existingBookingInfoLst.includes(add_item)) {
+                    existingBookingInfoLst.push(add_item);
+                    sessionStorage.setItem("BookingInfoLst", JSON.stringify(existingBookingInfoLst));
+                  } else {
+                        // or tell user it's already there
+                     console.log(add_item + ' already exists')
+                  }
+                        //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+                AddRoom4();
+                    //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            }
+
+            const noORooms5 = document.getElementById('noORooms-5').value;
+            if(noORooms5 > 0 ) {
+
+                        // parse existing storage key or string representation of empty array
+                  var existingBookingInfoLst = JSON.parse(sessionStorage.getItem("BookingInfoLst") || '[]');
+                        // Add item if it's not already in the array, then store array again
+                  if (!existingBookingInfoLst.includes(add_item)) {
+                    existingBookingInfoLst.push(add_item);
+                    sessionStorage.setItem("BookingInfoLst", JSON.stringify(existingBookingInfoLst));
+                  } else {
+                        // or tell user it's already there
+                     console.log(add_item + ' already exists')
+                  }
+                        //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+                AddRoom5();
+                    //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            }
+
+            const noORooms6 = document.getElementById('noORooms-6').value;
+            if(noORooms6 > 0 ) {
+
+                        // parse existing storage key or string representation of empty array
+                  var existingBookingInfoLst = JSON.parse(sessionStorage.getItem("BookingInfoLst") || '[]');
+                        // Add item if it's not already in the array, then store array again
+                  if (!existingBookingInfoLst.includes(add_item)) {
+                    existingBookingInfoLst.push(add_item);
+                    sessionStorage.setItem("BookingInfoLst", JSON.stringify(existingBookingInfoLst));
+                  } else {
+                        // or tell user it's already there
+                     console.log(add_item + ' already exists')
+                  }
+                        //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+                AddRoom6();
+                    //document.getElementById("demo").innerHTML = time;
+                sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
+            }
+
+            window.location.href = 'checkout/cart.html';
+        }
+    </script> <!--Book Now-->
     <!--All Add Rooms STARTS here-->
 </head>
 
@@ -690,7 +821,7 @@
                                 <h6>Size: <span>30 ft</span></h6>
                                 <h6>Capacity: <span>Max per room 2</span></h6>
                                 <h6>Bed: <span>Kingsize bed</span></h6>
-                                <h6>Services: <span>Wifi, smart tv ...</span></h6> 
+                                <h6>Services: <span>Wifi, smart tv ...</span></h6>
                                 <h6 id="noORoomsAvailable-1" class="">Available Rooms: <span> 15</span></h6>
                             </div>
                             <div class="mb-1">
@@ -698,9 +829,9 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue1()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-1" min="1" value="1"  style="width:65px;"/>
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-1" min="1" value="0"  style="width:65px;"/>
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue1()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1();" >Add Room</div>
+                                        <!--<div class="btn btn-sm btn-dark ml-2" onclick="AddRoom1();" >Add Room</div>-->
                                     </div>
                                 </fieldset>
                             </div>
@@ -729,9 +860,9 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue2()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-2" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-2" min="1" value="0" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue2()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom2()">Add Room</div>
+                                        <!--<div class="btn btn-sm btn-dark ml-2" onclick="AddRoom2()">Add Room</div>-->
                                     </div>
                                 </fieldset>
                             </div>
@@ -761,9 +892,9 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue3()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-3" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-3" min="1" value="0" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue3()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom3()">Add Room</div>
+                                        <!--<div class="btn btn-sm btn-dark ml-2" onclick="AddRoom3()">Add Room</div>-->
                                     </div>
                                 </fieldset>
                             </div>
@@ -793,9 +924,9 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue4()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-4" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-4" min="1" value="0" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue4()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom4()">Add Room</div>
+                                        <!--<div class="btn btn-sm btn-dark ml-2" onclick="AddRoom4()">Add Room</div>-->
                                     </div>
                                 </fieldset>
                             </div>
@@ -825,9 +956,9 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue5()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-5" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-5" min="1" value="0" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue5()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom5()">Add Room</div>
+                                        <!--<div class="btn btn-sm btn-dark ml-2" onclick="AddRoom5()">Add Room</div>-->
                                     </div>
                                 </fieldset>
                             </div>
@@ -857,9 +988,9 @@
                                     <!--<label>Rooms</label>-->
                                     <div class="buttons form-inline">
                                         <div class="decrement btn btn-sm btn-dark" onclick="decreaseValue6()">&nbsp;-&nbsp;</div>
-                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-6" min="1" value="1" style="width:75px;" />
+                                        <input class="col-sm-2 text-center m-1" type="number" id="noORooms-6" min="1" value="0" style="width:75px;" />
                                         <div class="increment btn btn-sm btn-dark" onclick="increaseValue6()">&nbsp;+&nbsp;</div>
-                                        <div class="btn btn-sm btn-dark ml-2" onclick="AddRoom6()">Add Room</div>
+                                        <!--<div class="btn btn-sm btn-dark ml-2" onclick="AddRoom6()">Add Room</div>-->
                                     </div>
                                 </fieldset>
                             </div>
@@ -933,7 +1064,7 @@
                                 </div>
                             </div>-->
                             <div class="form-group">
-                                <a href="checkout/cart.html" class="btn btn-dark text-white w-100">Book Now</a> <!--onclick="SaveBookingMultipleSession()"-->
+                                <a href="#" class="btn btn-dark text-white w-100" onclick="BookNow()">Book Now</a> <!--onclick="SaveBookingMultipleSession()"-->
                             </div>
                         </form>
                     </div>

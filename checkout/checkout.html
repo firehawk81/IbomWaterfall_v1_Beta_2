@@ -10,7 +10,10 @@
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/checkout.css">
 <link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
-<link rel="icon" href="../img/core-img/ibw-logo.png">
+<link rel="icon" href="../img/core-img/ibw-logo.png">    
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
     
 <style type="text/css">
         .social-bg {
@@ -44,122 +47,36 @@
     }
 </style>
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+        const roomRate = 0;
+            //var id = (new URL(location.href)).searchParams.get('id');
+            //const theRoomType = 'Penthouse';
+            $( window ).on( "load", function() {
+                var html = "";
+                $.ajax({
+
+                    success: function (data) {
+
+                    sessionStorage.getItem('BookingInfoLst');
+                    var cartItem = sessionStorage.length
+                    document.getElementById("cart").value = cartItem;
+                    }
+                });
+            });
+        });
+
+    </script>
+
 
 </head>
 <body>
-    <script src="https://checkout.flutterwave.com/v3.js"></script>
-    
+    <!--<script src="https://checkout.flutterwave.com/v3.js"></script>-->
+
+
     <script type="text/javascript">
-    //FLUTTERWAVE InlineJS Ends Here
-
-
-
-        const radio_flutterwave = document.getElementById("radio_flutterwave");
-        const radio_budpay = document.getElementById("radio_budpay");
-
-         function makePayment() {
-                SaveSession();
-
-            FlutterwaveCheckout({
-              public_key: "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X",
-              tx_ref: "txref-DI0NzMx13", //refNo,
-              amount: 2500, //total,
-              currency: "NGN",
-              payment_options: "card, banktransfer, ussd",
-              redirect_url: "http://localhost:57264/verifications/flutter.aspx", // "https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/verifications/flutter.aspx",
-              meta: {
-                source: "docs-inline-test",
-                consumer_mac: "92a3-912ba-1192a",
-              },
-              customer: {
-                email: "dto1981@hotmail.com", //email,
-                phone_number: 07032499237, //phone,
-                name: "David T. Ogundele", //firstName+" "+lastName,
-              },
-              customizations: {
-                title: "Ibom Waterfall Resort & Suites",
-                description: "Payment for room reservation",
-                logo: "https://firehawk81.github.io/IbomWaterfall/checkout/images/ibw-logo.png",
-              },
-              callback: function (data){
-                console.log("payment callback:", data);
-              },
-              onclose: function() {
-                console.log("Payment cancelled!");
-              }
-            });
-          }
-
-    //FLUTTERWAVE InlineJS Ends Here
-    /*-----------------------------------------------------------------------------------------------  Seperator  */
-
-    //BUDPAY InlineJS Starts Here
-        //else if(radio_budpay.checked) {
-        function payWithBudPay() {
-                SaveSession();
-            BudPayCheckout({
-                key: 'pk_test_bzac67e1dlry9t7izfjnarpxlwbbobylij7jwz', // Replace with your public key
-                email: email,
-                amount: total, //document.getElementById('txtTotal').value,
-                first_name: firstName,
-                last_name: lastName,
-                currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
-                reference: refNo, //'' + Math.floor((Math.random() * 100000000000) + 1) + new Date().getSeconds() + new Date().getMilliseconds(), // generates a pseudo-unique reference. Please replace with a reference you generated. or remove the line entirely so our API will generate one for you
-                callback: function(response) {
-                //this happens after the payment is completed successfully
-                var reference = response.reference;
-                //alert('Payment complete! Reference: ' + reference + ', Status: ' + response.status);
-                  window.location.href = 'http://localhost:57264/verifications/budpay.aspx?reference='+response.reference;
-                    //
-                       // Do the Reservation insert here POST
-                    //
-                },
-                onClose: function (response) {
-                console.log(response);
-                alert('Transaction was not completed, window closed.');
-                },
-                custom_fields: {
-                    tax_pay_transaction: "",
-                    tax_pay_type: "",
-                    agency_code: "",
-                    revenue_code: "",
-                    revenue_credit_acc: "",
-                    cbn_code: "",
-                }
-            });
-          }
-        //} else {
-        //    alert('Please make choose a payment method.');
-        //}
-    //BUDPAY InlineJS Ends Here
-        function InserReservations(e) {
-        e.preventDefault();
-
-        const url = "https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/api/DailySalesHotel";
-        const data = { FirstName: firstName, LastName: lastName, Phone: phone, Email: email, Address: address, State: state, City: city, Country: country, Zipcode: zipcode, Remark: checkoutComment, RoomsList: roomsLst, SubTotal: subTotal, Vat: vat, Total: total, RefNo: refNo };
-            //sessionStorage.setItem("Reservation", JSON.stringify(obj));
-
-        const other_params = {
-            headers : { "content-type" : "application/json; charset=UTF-8"},
-            body : data,
-            method : "POST",
-            mode : "cors"
-        };
-
-        fetch(url, other_params)
-            .then(function(response) {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("Could not reach the API: " + response.statusText);
-            }
-        }).then(function(data) {
-            document.getElementById("message").innerHTML = data.encoded;
-        }).catch(function(error) {
-            document.getElementById("message").innerHTML = error.message;
-        });
-        return true;
-    }
+                
         function SaveSession() {
 
         const _firstName = document.getElementById("txtFirstName").value;
@@ -172,8 +89,6 @@
         const _country = document.getElementById("country").value;
         const _zipcode = document.getElementById("txtZipcode").value;
         const _checkoutComment = document.getElementById("checkout_comment").value;
-
-
 
         const _roomsLst = document.getElementById("txtRooms").value;
         const _subTotal = document.getElementById("txtSubTotal").value;
@@ -207,8 +122,9 @@
 
         function CheckOutAndPay() {
             SaveSession();
-            window.location.href = 'inv.html';
+            window.location.href = 'inv.html'; // cart
         }
+
     </script>    
     
 <div class="super_container">
@@ -240,7 +156,7 @@
                             <img src="images/shopping-bag.svg" alt="">
                             <div class="cart_num_container">
                                 <div class="cart_num_inner">
-                                    <div class="cart_num">1</div>
+                                    <div id="cart" class="cart_num"></div>
                                 </div>
                             </div>
                         </div>
@@ -592,7 +508,7 @@
 									</div>-->
 								</div>
 							</form>
-                            <script src="https://inlinepay.budpay.com/budpay-inline-custom.js"></script>
+                            <!--<script src="https://inlinepay.budpay.com/budpay-inline-custom.js"></script>-->
 						</div>
 					</div>
 				</div>
