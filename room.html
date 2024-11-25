@@ -11,6 +11,9 @@
     <title>Ibom Waterfall Resort &amp; Suites | Rooms </title>
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/ibw-logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
@@ -51,7 +54,7 @@
 
                 success: function (data) {
                 //var roomRate = data.Rate;
-                 
+
                 $("#rate-1").html('&#8358;'+data.Rate.toLocaleString(undefined, { maximumFractionDigits: 2 }));
                 $("#roomType-1").html(data.CategoryName+' Room');
                     sessionStorage.setItem('Rate1', data.Rate);
@@ -224,8 +227,8 @@
         //const singleTotal = document.getElementById('singleTotal');
         const adults = document.getElementById('guests').value;
         const children = document.getElementById('children').value;
-        const checkInDate = new Date(document.getElementById("checkInDate").value);
-        const checkOutDate = new Date(document.getElementById("checkOutDate").value);
+        const checkInDate = new Date(document.getElementById("checkInDate").innerHTML);
+        const checkOutDate = new Date(document.getElementById("checkOutDate").innerHTML);
 
         //roomRate = 45000; // Will be deleted later
         const nights = checkOutDate.getDate() - checkInDate.getDate();
@@ -406,8 +409,8 @@
             const roomType1 = sessionStorage.getItem('RoomType1');
             const adults = document.getElementById('guests').value;
             const children = document.getElementById('children').value;
-            const checkInDate = new Date(document.getElementById("checkInDate").value);
-            const checkOutDate = new Date(document.getElementById("checkOutDate").value);
+            const checkInDate = new Date(document.getElementById("checkInDate").value); //innerHTML
+            const checkOutDate = new Date(document.getElementById("checkOutDate").value); //innerHTML
 
             const nights = checkOutDate.getDate() - checkInDate.getDate();
             singleTotal = rate1 * nights * noORooms1;
@@ -419,7 +422,7 @@
             //sessionStorage.setItem('BookingInfoLst', JSON.stringify(bookingDataLst));
                     //window.location.href = 'checkout/cart.html';
 
-            
+
         }
         </script> <!--AddRoom1();-->
 
@@ -1013,16 +1016,40 @@
                     <!-- Hotel Reservation Area -->
                     <div class=" hotel-reservation--area mb-50 sticky">
                         <form action="#" method="post">
-                            <div class="form-group mb-10">
+                            <div class="form-group mb-10"><!--<input type="text" class="input-small form-control" id="checkInDate" name="checkInDate" placeholder="Check In">-->
                                 <label for="checkInDate">Date</label>
-                                <div class="input-daterange" id="datepicker">
+
+                                <div class="" id="datepicker22">
                                     <div class="row no-gutters">
-                                        <div class="col-6">
-                                            <input type="date" class="input-small form-control" id="checkInDate" name="checkInDate" placeholder="Check In">
+
+                                        <div class='col-sm-6'>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <input type="tel" class="form-control" id="checkInDate" placeholder="Check In" />
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-6">
-                                            <input type="date" class="input-small form-control" id="checkOutDate" name="checkOutDate" placeholder="Check Out">
+                                        <div class='col-sm-6'>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <input type="text" class="form-control" id="checkOutDate" placeholder="Check Out" />
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <script type="text/javascript">
+                                            $(function () {
+                                                $('#checkInDate').datepicker();
+                                            });
+                                            $(function () {
+                                                $('#checkOutDate').datepicker();
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                             </div>
