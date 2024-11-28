@@ -34,17 +34,24 @@
 
     <script type="text/javascript">
     function payWithMonnify() {
+
+        var data = sessionStorage.getItem('BookingInfoLst');
+        var bookingData = JSON.parse(data);
+
+        var ReserveData = sessionStorage.getItem('Reservation');
+        var reservationData = JSON.parse(ReserveData);
+
         MonnifySDK.initialize({
-            amount: 100,
+            amount: bookingData.SingleTotal,
             currency: "NGN",
             reference: new String((new Date()).getTime()),
-            customerFullName: "David T. Ogundele",
-            customerEmail: "dto1981@hotmail.com",
+            customerFullName: reservationData.FirstName+' '+reservationData.LastName, //"David T. Ogundele",
+            customerEmail: reservationData.Email, //"dto1981@hotmail.com",
             apiKey: "MK_TEST_D62CJHCFXD",
             contractCode: "7378560858",
             paymentDescription: "Lahray World",
             metadata: {
-            "name": "9AppSoft",
+            "name": reservationData.FirstName+' '+reservationData.LastName, //"9AppSoft",
             "age": 45
         },
         paymentMethods: [
