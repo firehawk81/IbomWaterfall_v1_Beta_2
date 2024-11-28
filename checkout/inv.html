@@ -16,8 +16,6 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
     
-    <!-- Monie Point Inline Js API -->
-    <script type="text/javascript" src="https://sdk.monnify.com/plugin/monnify.js"></script>
 
     <link href="styles/invoice-1.css" rel="stylesheet" />
 
@@ -30,7 +28,47 @@
             color: #0e2737;
         }
     </style>
-    
+    <!--MONIE POINT InlineJS START Here-->    <!-- Monie Point Inline Js API -->
+    <script type="text/javascript" src="https://sdk.monnify.com/plugin/monnify.js"></script>
+    <script type="text/javascript">
+    function payWithMonnify() {
+        MonnifySDK.initialize({
+            amount: 100,
+            currency: "NGN",
+            reference: new String((new Date()).getTime()),
+            customerFullName: "Damilare Ogunnaike",
+            customerEmail: "dto1981@hotmail.com",
+            apiKey: "MK_TEST_D62CJHCFXD",
+            contractCode: "626609763141",
+            paymentDescription: "Lahray World",
+            metadata: {
+            "name": "Damilare",
+            "age": 45
+        },
+        paymentMethods: [
+            "CARD",
+            "ACCOUNT_TRANSFER",
+            "USSD",
+            "PHONE_NUMBER"
+          ],
+            onLoadStart: () => {
+            console.log("loading has started");
+        },
+            onLoadComplete: () => {
+            console.log("SDK is UP");
+        },
+        onComplete: function(response) {
+        //Implement what happens when the transaction is completed.
+        console.log(response);
+        },
+            onClose: function(data) {
+        //Implement what should happen when the modal is closed here
+                console.log(data);
+                }
+            });
+        }
+    </script>
+    <!--MONIE POINT InlineJS ENDS Here-->
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -104,46 +142,6 @@
     </script>
 
 
-    <!--MONIE POINT InlineJS START Here-->
-    <script type="text/javascript">
-    function payWithMonnify() {
-        MonnifySDK.initialize({
-            amount: 100,
-            currency: "NGN",
-            reference: new String((new Date()).getTime()),
-            customerFullName: "Damilare Ogunnaike",
-            customerEmail: "dto1981@hotmail.com",
-            apiKey: "MK_TEST_D62CJHCFXD",
-            contractCode: "626609763141",
-            paymentDescription: "Lahray World",
-            metadata: {
-            "name": "Damilare",
-            "age": 45
-        },
-        paymentMethods: [
-            "CARD",
-            "ACCOUNT_TRANSFER",
-            "USSD",
-            "PHONE_NUMBER"
-          ],
-            onLoadStart: () => {
-            console.log("loading has started");
-        },
-            onLoadComplete: () => {
-            console.log("SDK is UP");
-        },
-        onComplete: function(response) {
-        //Implement what happens when the transaction is completed.
-        console.log(response);
-        },
-            onClose: function(data) {
-        //Implement what should happen when the modal is closed here
-                console.log(data);
-                }
-            });
-        }
-    </script>
-    <!--MONIE POINT InlineJS ENDS Here-->
 </head>
 <body>
     <script src="https://checkout.flutterwave.com/v3.js"></script>
