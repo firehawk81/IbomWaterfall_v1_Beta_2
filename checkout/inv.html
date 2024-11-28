@@ -15,6 +15,9 @@
     
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
+    
+    <!-- Monie Point Inline Js API -->
+    <script type="text/javascript" src="https://sdk.monnify.com/plugin/monnify.js"></script>
 
     <link href="styles/invoice-1.css" rel="stylesheet" />
 
@@ -99,6 +102,53 @@
     });
 
     </script>
+
+
+    <!--MONIE POINT InlineJS START Here-->
+    <script type="text/javascript">
+    function payWithMonnify() {
+        MonnifySDK.initialize({
+        amount: 100,
+        currency: "NGN",
+        reference: new String((new Date()).getTime()),
+        customerFullName: "Damilare Ogunnaike",
+        customerEmail: "dto1981@hotmail.com",
+        apiKey: "MK_TEST_D62CJHCFXD",
+        contractCode: "626609763141",
+        paymentDescription: "Lahray World",
+        metadata: {
+        "name": "Damilare",
+        "age": 45
+        },
+        incomeSplitConfig: [{
+        "subAccountCode": "MFY_SUB_342113621921",
+        "feePercentage": 50,
+        "splitAmount": 1900,
+        "feeBearer": true
+        }, {
+        "subAccountCode": "MFY_SUB_342113621922",
+        "feePercentage": 50,
+        "splitAmount": 2100,
+        "feeBearer": true
+        }],
+        onLoadStart: () => {
+        console.log("loading has started");
+        },
+        onLoadComplete: () => {
+        console.log("SDK is UP");
+        },
+        onComplete: function(response) {
+        //Implement what happens when the transaction is completed.
+        console.log(response);
+        },
+        onClose: function(data) {
+        //Implement what should happen when the modal is closed here
+        console.log(data);
+        }
+        });
+        }
+    </script>
+    <!--MONIE POINT InlineJS ENDS Here-->
 </head>
 <body>
     <script src="https://checkout.flutterwave.com/v3.js"></script>
@@ -189,6 +239,10 @@
         //    alert('Please make choose a payment method.');
         //}
     //BUDPAY InlineJS Ends Here
+
+    //MONIE POINT InlineJS Starts Here
+    /*-----------------------------------------------------------------------------------------------  Seperator  */
+
     </script>
 
     <div class="container">
@@ -334,8 +388,11 @@
 
                                 <br /><h5 class="text-right"> PAY WITH</h5>
                                 <div class="custom-actions-btns">
+                                    <a href="#" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5" onclick="payWithMonnify()">
+                                    <img src="images/Moniepointlogo.png" height="30" alt=""></a>
                                     <a href="#" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5" onclick="makePayment()">
-                                    <img src="images/Flutterwave_Logo.png" height="30" alt=""></a>
+                                        <img src="images/Flutterwave_Logo.png" height="30" alt="">
+                                    </a>
                                     <a href="#" class="btn btn-sm btn-primary col-sm-3 m-b-10 p-l-5" onclick="payWithBudPay()">
                                     <img src="images/budpay-logo-mixed.png" height="30" alt=""></a>
                                 </div>
