@@ -165,6 +165,13 @@
     var data = sessionStorage.getItem('BookingInfoLst');
     var bookingData = JSON.parse(data);
         */
+
+        var data = sessionStorage.getItem('BookingInfoLst');
+        var bookingData = JSON.parse(data);
+
+        var ReserveData = sessionStorage.getItem('Reservation');
+        var reservationData = JSON.parse(ReserveData);
+
         const radio_flutterwave = document.getElementById("radio_flutterwave");
         const radio_budpay = document.getElementById("radio_budpay");
 
@@ -174,7 +181,7 @@
             FlutterwaveCheckout({
               public_key: "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X",
               tx_ref: "txref-DI0NzMx13", //refNo,
-              amount: 2500, //total,
+              amount: bookingData.SingleTotal, //2500, //total,
               currency: "NGN",
               payment_options: "card, banktransfer, ussd",
               redirect_url: "http://localhost:57264/verifications/flutter.aspx", // "https://195.201.81.237/plesk-site-preview/iwr.9appsoft.com/verifications/flutter.aspx",
@@ -183,9 +190,10 @@
                 consumer_mac: "92a3-912ba-1192a",
               },
               customer: {
-                email: "dto1981@hotmail.com", //email,
-                phone_number: 07032499237, //phone,
-                name: "David T. Ogundele", //firstName+" "+lastName,
+                email: reservationData.Email, //email,
+                phone_number: reservationData.Phone, //phone,
+                name: reservationData.FirstName+' '+reservationData.LastName, //firstName+" "+lastName,
+
               },
               customizations: {
                 title: "Ibom Waterfall Resort & Suites",
