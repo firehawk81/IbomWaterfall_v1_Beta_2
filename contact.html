@@ -13,8 +13,34 @@
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/favicon.png">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
+
+    <!-- Jquery CDN -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- <script type="module" src="js/customlayouts.js"></script> -->
+    
+    <script type="text/javascript">
+        $(function(){
+            $("#header").load("layouts/header.html");
+            $("#footer").load("layouts/footer.html");
+        });
+    </script>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -25,107 +51,8 @@
     </div>
     <!-- /Preloader -->
     
-    <!-- Header Area Start -->
-    <header class="header-area">
-        <!-- Search Form -->
-        <!--<div class="search-form d-flex align-items-center">
-            <div class="container">
-                <form action="index.html" method="get">
-                    <input type="search" name="search-form-input" id="searchFormInput" placeholder="Type your keyword ...">
-                    <button type="submit"><i class="icon_search"></i></button>
-                </form>
-            </div>
-        </div>-->
-        <!-- Top Header Area Start -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="top-header-content">
-                            <a href="#"><i class="icon_phone" style="color:#1c7bc3"></i> <span>(+234) 808 494 5237</span></a>
-                            <a href="#"><i class="icon_mail" style="color:#1c7bc3"></i> <span>iwaterfallsuites@gmail.com</span></a>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="top-header-content">
-                            <!-- Top Social Area -->
-                            <div class="top-social-area ml-auto">
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Top Header Area End -->
-        <!-- Main Header Start -->
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Classy Menu -->
-                    <nav class="classy-navbar justify-content-between" id="robertoNav">
-                        <!-- Logo -->
-                        <a class="nav-brand" href="default.html"><img src="./img/core-img/ibw-logo.png" width="75" height="36" alt=""></a>
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-                        <!-- Menu -->
-                        <div class="classy-menu">
-                            <!-- Menu Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li class="active"><a href="./default.html">Home</a></li>
-                                    <li><a href="./room.html">Rooms</a></li>
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li>
-                                        <a href="gallery/gallery.html">Gallery</a>
-                                        <!--<ul class="dropdown">
-                                            <li><a href="./index.html">- Home</a></li>
-                                            <li><a href="./room.html">- Rooms</a></li>
-                                            <li><a href="./single-room.html">- Single Rooms</a></li>
-                                            <li><a href="./about.html">- About Us</a></li>
-                                            <li><a href="./blog.html">- Blog</a></li>
-                                            <li><a href="./single-blog.html">- Single Blog</a></li>
-                                            <li><a href="./contact.html">- Contact</a></li>
-                                            <li>
-                                                <a href="#">- Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>-->
-                                    </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
-                                </ul>
-                                <!-- Search -->
-                                <div class="search-btn ml-4">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-                                <!-- Book Now -->
-                                <div class="book-now-btn ml-3 ml-lg-5">
-                                    <a href="#">Book Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End
+    <div id="header"></div>
+    
     <!-- Breadcrumb Area Start -->
     <div class="breadcrumb-area contact-breadcrumb bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/18.jpg);">
         <div class="container">
@@ -156,7 +83,7 @@
                         <div class="single-contact-info">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <h4>Phone</h4>
-                            <p>+01-234-567-890</p>
+                            <p>(+234) 808 494 5237</p>
                         </div>
                     </div>
                     <!-- Single Contact Info -->
@@ -164,7 +91,7 @@
                         <div class="single-contact-info">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <h4>Address</h4>
-                            <p>Iris Watson, 283 Fusce Rd,NY</p>
+                            <p>Mao Ohuabunwa Street, Ibom 442101, Abia, Nigeria</p>
                         </div>
                     </div>
                     <!-- Single Contact Info -->
@@ -172,7 +99,7 @@
                         <div class="single-contact-info">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                             <h4>Open time</h4>
-                            <p>10:00 am to 23:00 pm</p>
+                            <p>06:00 am to 12:00 am</p>
                         </div>
                     </div>
                     <!-- Single Contact Info -->
@@ -180,14 +107,14 @@
                         <div class="single-contact-info">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             <h4>Email</h4>
-                            <p>Info.colorlib @gmail.com</p>
+                            <p>iwaterfallsuites@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Google Maps -->
                 <div class="google-maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82774.69671830302!2d24.077286625210185!3d56.96328499537209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2sRiga%2C+Latvia!5e0!3m2!1sen!2sbd!4v1549536732147" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.2138551084026!2d7.909748173755471!3d5.384337894594636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105d370744c4b77f%3A0xa71b72363936ff61!2sIbom%20Waterfall%20Resort%20%26%20Suites!5e0!3m2!1sen!2sng!4v1738068536863!5m2!1sen!2sng" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -242,7 +169,7 @@
                     <div class="col-12 col-md-7">
                         <div class="cta-text mb-50">
                             <h2>Contact us now!</h2>
-                            <h6>Contact (+12) 345-678-9999 to book directly or for advice</h6>
+                            <h6>Contact (+234) 808 494 5237 to book directly or for advice</h6>
                         </div>
                     </div>
                     <div class="col-12 col-md-5 text-right">
@@ -277,87 +204,17 @@
     </div>
     <!-- Partner Area End -->
 
-    <!-- Footer Area Start -->
-    <footer class="footer-area section-padding-80-0">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row align-items-baseline justify-content-between">
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/logo2.png" alt=""></a>
-
-                            <h4>+12 345-678-9999</h4>
-                            <span>Info.colorlib@gmail.com</span>
-                            <span>856 Cordia Extension Apt. 356, Lake Deangeloburgh, South Africa</span>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Our Blog</h5>
-
-                            <!-- Single Blog Area -->
-                            <div class="latest-blog-area">
-                                <a href="#" class="post-title">Freelance Design Tricks How</a>
-                                <span class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> Jan 02, 2019</span>
-                            </div>
-
-                            <!-- Single Blog Area -->
-                            <div class="latest-blog-area">
-                                <a href="#" class="post-title">Free Advertising For Your Online</a>
-                                <span class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> Jan 02, 2019</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Links</h5>
-
-                            <!-- Footer Nav -->
-                            <ul class="footer-nav">
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> About Us</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> Our Room</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> Career</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> FAQs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-8 col-lg-4">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Subscribe Newsletter</h5>
-                            <span>Subscribe our newsletter gor get notification about new updates.</span>
-
-                            <!-- Newsletter Form -->
-                            <form action="index.html" class="nl-form">
-                                <input type="email" class="form-control" placeholder="Enter your email...">
-                                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div id="footer"></div>
 
         <!-- Copywrite Area -->
-        <div class="container">
+        <div class="container-fluid footer-area">
             <div class="copywrite-content">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-8">
                         <!-- Copywrite Text -->
                         <div class="copywrite-text">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by <a href="https://9appsoft.com" target="_blank">9AppSoft</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -373,7 +230,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-    </footer>
     <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->

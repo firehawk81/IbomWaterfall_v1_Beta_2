@@ -13,9 +13,31 @@
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/ibw-logo.png">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"> </script>
+
+    <!-- Jquery CDN -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- <script type="module" src="js/customlayouts.js"></script> -->
+    
+    <script type="text/javascript">
+        $(function(){
+            $("#header").load("layouts/header.html");
+            $("#footer").load("layouts/footer.html");
+        });
+    </script>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -25,107 +47,7 @@
     </div>
     <!-- /Preloader -->
     
-    <!-- Header Area Start -->
-    <header class="header-area">
-        <!-- Search Form -->
-        <!--<div class="search-form d-flex align-items-center">
-            <div class="container">
-                <form action="index.html" method="get">
-                    <input type="search" name="search-form-input" id="searchFormInput" placeholder="Type your keyword ...">
-                    <button type="submit"><i class="icon_search"></i></button>
-                </form>
-            </div>
-        </div>-->
-        <!-- Top Header Area Start -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="top-header-content">
-                            <a href="#"><i class="icon_phone" style="color:#1c7bc3"></i> <span>(+234) 808 494 5237</span></a>
-                            <a href="#"><i class="icon_mail" style="color:#1c7bc3"></i> <span>iwaterfallsuites@gmail.com</span></a>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="top-header-content">
-                            <!-- Top Social Area -->
-                            <div class="top-social-area ml-auto">
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Top Header Area End -->
-        <!-- Main Header Start -->
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Classy Menu -->
-                    <nav class="classy-navbar justify-content-between" id="robertoNav">
-                        <!-- Logo -->
-                        <a class="nav-brand" href="default.html"><img src="./img/core-img/ibw-logo.png" width="75" height="36" alt=""></a>
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-                        <!-- Menu -->
-                        <div class="classy-menu">
-                            <!-- Menu Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li class="active"><a href="./default.html">Home</a></li>
-                                    <li><a href="./room.html">Rooms</a></li>
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li>
-                                        <a href="gallery/gallery.html">Gallery</a>
-                                        <!--<ul class="dropdown">
-                                            <li><a href="./index.html">- Home</a></li>
-                                            <li><a href="./room.html">- Rooms</a></li>
-                                            <li><a href="./single-room.html">- Single Rooms</a></li>
-                                            <li><a href="./about.html">- About Us</a></li>
-                                            <li><a href="./blog.html">- Blog</a></li>
-                                            <li><a href="./single-blog.html">- Single Blog</a></li>
-                                            <li><a href="./contact.html">- Contact</a></li>
-                                            <li>
-                                                <a href="#">- Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>-->
-                                    </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
-                                </ul>
-                                <!-- Search -->
-                                <div class="search-btn ml-4">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-                                <!-- Book Now -->
-                                <div class="book-now-btn ml-3 ml-lg-5">
-                                    <a href="#">Book Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End
+    <div id="header"></div>
 
     <!-- Welcome Area Start -->
     <section class="welcome-area">
@@ -320,7 +242,7 @@
                     <h3 data-animation="fadeInUp" data-delay="300ms">&#8358;55,000 <span>/ Day</span></h3>
                     <ul class="room-feature" data-animation="fadeInUp" data-delay="500ms">
                         <li><span><i class="fa fa-check"></i> Size</span> <span>: 30 ft</span></li>
-                        <li><span><i class="fa fa-check"></i> Capacity</span> <span>: Max persion 2</span></li>
+                        <li><span><i class="fa fa-check"></i> Capacity</span> <span>: Max persons 2</span></li>
                         <li><span><i class="fa fa-check"></i> Bed</span> <span>: Queensize Bed</span></li>
                         <li><span><i class="fa fa-check"></i> Services</span> <span>: Wifi, Television, Bathroom</span></li>
                     </ul>
@@ -331,7 +253,7 @@
             <!-- Single Room Slide -->
             <div class="single-room-slide d-flex align-items-center">
                 <!-- Thumbnail -->
-                <div class="room-thumbnail h-100 bg-img" style="background-image: url(img/bg-img/17.jpg);"></div>
+                <div class="room-thumbnail h-100 bg-img" style="background-image: url(img/bg-img/executive/3.jpg);"></div>
 
                 <!-- Content -->
                 <div class="room-content">
@@ -339,7 +261,7 @@
                     <h3 data-animation="fadeInUp" data-delay="300ms">&#8358;65,000  <span>/ Day</span></h3>
                     <ul class="room-feature" data-animation="fadeInUp" data-delay="500ms">
                         <li><span><i class="fa fa-check"></i> Size</span> <span>: 30 ft</span></li>
-                        <li><span><i class="fa fa-check"></i> Capacity</span> <span>: Max persion 2</span></li>
+                        <li><span><i class="fa fa-check"></i> Capacity</span> <span>: Max persons 2</span></li>
                         <li><span><i class="fa fa-check"></i> Bed</span> <span>: Queensize Bed</span></li>
                         <li><span><i class="fa fa-check"></i> Services</span> <span>: Wifi, Television, Bathroom</span></li>
                     </ul>
@@ -354,9 +276,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <div class="testimonial-thumbnail owl-carousel mb-100">
+                    <div class="testimonial-thumbnail owl-carousel mb-40">
+                        <img src="img/bg-img/pool-side-bush-bar.png" alt="">
+                        <!-- <img src="img/bg-img/11.jpg" alt="">
                         <img src="img/bg-img/10.jpg" alt="">
-                        <img src="img/bg-img/11.jpg" alt="">
+                        <img src="img/bg-img/11.jpg" alt=""> -->
                     </div>
                 </div>
 
@@ -371,7 +295,8 @@
 
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
-                            <h5>“This can be achieved by applying search engine optimization or popularly known as SEO. This is a marketing strategy which increases the quality and quantity of traffic flow to a particular website via search engines.”</h5>
+                            <h5>“Very nice hotel with open pool side and bar, good staffs and good security. I will recommend that the management keeps maintenance of facility as their top priority and staff training on good customer service.
+                                I enjoyed the daily breakfast and constant electricity while we stayed here, everyone I came across was nice and friendly, good music food and drinks at the pool side every night.”</h5>
                             <div class="rating-title">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -380,13 +305,13 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h6>Robert Downey <span>- CEO Deercreative</span></h6>
+                                <h6>Robert Downey <span>-</span></h6>
                             </div>
                         </div>
 
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
-                            <h5>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus delectus facilis molestias, error vitae praesentium quos eaque qui ea, tempore blanditiis sint reprehenderit, quaerat. Commodi ab architecto sit suscipit exercitationem!”</h5>
+                            <h5>“This is the best hotel in Arochukwu, stayed a month during my Eid visit to Nigeria and I won’t lie, it’s amazing, well cleaned rooms, nice environments, staffs and security are top notch esp one of the receptionist staff! Omggg she deserve best employee award for the year , she’s so welcoming and nice.”</h5>
                             <div class="rating-title">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -395,13 +320,13 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h6>Akash Downey <span>- CEO Deercreative</span></h6>
+                                <h6>Akash Ojo <span>- </span></h6>
                             </div>
                         </div>
 
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
-                            <h5>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, ex quos. Alias a rem maiores, possimus dicta sit distinctio quis iusto!”</h5>
+                            <h5>“What a wonderful experience! Stayed at this hotel with my friends for 4 days and we didn’t have a single complain. Everything was perfect and top notch. Great customer care, wonderful workers, the rooms, the restaurant, the lounge… everything was so good. We really enjoyed our stay.”</h5>
                             <div class="rating-title">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -410,13 +335,13 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h6>Downey Sarah <span>- CEO Deercreative</span></h6>
+                                <h6>Ayo Sarah <span>- </span></h6>
                             </div>
                         </div>
 
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
-                            <h5>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sequi laboriosam fugit suscipit aspernatur, minima minus voluptatum, id ab atque similique ex earum. Magni.”</h5>
+                            <h5>“The place is quite impressive especially for it's location, I can confidently say that it's the leading hospitality business in that axis of the city, however I feel there are a couple of more they can do especially with the entertainment at the outdoor bar, oh that bar is a very cool and mature one, I didn't see much of rag tag individuals there, so I can say it's a place for the mature minds and for big boys/girls, I also compare their rooms to other Hotels standards.”</h5>
                             <div class="rating-title">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -425,7 +350,7 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h6>Robert Brown <span>- CEO Deercreative</span></h6>
+                                <h6>Robert Brown <span>- </span></h6>
                             </div>
                         </div>
 
@@ -542,10 +467,10 @@
     </section>
     <!-- Projects Area End -->
     <!-- Blog Area Start -->
-    <section class="roberto-blog-area section-padding-100-0">
+    <!-- <section class="roberto-blog-area section-padding-100-0">
         <div class="container">
             <div class="row">
-                <!-- Section Heading -->
+                Section Heading
                 <div class="col-12">
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
                         <h6>Our Blog</h6>
@@ -555,48 +480,48 @@
             </div>
 
             <div class="row">
-                <!-- Single Post Area -->
+                Single Post Area
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="post-thumbnail"><img src="img/bg-img/2.jpg" alt=""></a>
-                        <!-- Post Meta -->
+                        <a href="#" class="post-thumbnail"><img src="img/bg-img/lounge-1.png" height="417" alt=""></a>
+                        Post Meta
                         <div class="post-meta">
                             <a href="#" class="post-date">Jan 02, 2019</a>
                             <a href="#" class="post-catagory">Event</a>
                         </div>
-                        <!-- Post Title -->
+                        Post Title
                         <a href="#" class="post-title">Learn How To Motivate Yourself</a>
                         <p>How many free autoresponders have you tried? And how many emails did you get through using them?</p>
                         <a href="index.html" class="btn continue-btn"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
-                <!-- Single Post Area -->
+                Single Post Area
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-100 wow fadeInUp" data-wow-delay="500ms">
                         <a href="#" class="post-thumbnail"><img src="img/bg-img/3.jpg" alt=""></a>
-                        <!-- Post Meta -->
+                        Post Meta
                         <div class="post-meta">
                             <a href="#" class="post-date">Jan 02, 2019</a>
                             <a href="#" class="post-catagory">Event</a>
                         </div>
-                        <!-- Post Title -->
+                        Post Title
                         <a href="#" class="post-title">What If Let You Run The Hubble</a>
                         <p>My point here is that if you have no clue for the answers above you probably are not operating a followup.</p>
                         <a href="index.html" class="btn continue-btn"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
-                <!-- Single Post Area -->
+                Single Post Area
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-100 wow fadeInUp" data-wow-delay="700ms">
                         <a href="#" class="post-thumbnail"><img src="img/bg-img/4.jpg" alt=""></a>
-                        <!-- Post Meta -->
+                        Post Meta
                         <div class="post-meta">
                             <a href="#" class="post-date">Jan 02, 2019</a>
                             <a href="#" class="post-catagory">Event</a>
                         </div>
-                        <!-- Post Title -->
+                        Post Title
                         <a href="#" class="post-title">Six Pack Abs The Big Picture</a>
                         <p>Some good steps to take to ensure you are getting what you need out of a autoresponder include…</p>
                         <a href="index.html" class="btn continue-btn"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
@@ -605,7 +530,7 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Blog Area End -->
     <!-- Call To Action Area Start -->
     <section class="roberto-cta-area">
@@ -649,105 +574,30 @@
     </div>
     <!-- Partner Area End -->
     <!-- Footer Area Start -->
-    <footer class="footer-area section-padding-80-0">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row align-items-baseline justify-content-between">
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/ibw-logo.png" width="85" height="36" alt=""></a>
-
-                            <h4>(+234) 808 494 5237</h4>
-                            <span>iwaterfallsuites@gmail.com</span>
-                            <span>Ibom Barracks road. 442101, Ibom, Abia State</span>
-                        </div>
+    <div id="footer"></div>
+    <div class="container-fluid footer-area">
+        <div class="copywrite-content">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <!-- Copywrite Text -->
+                    <div class="copywrite-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by <a href="https://9appsoft.com" target="_blank">9AppSoft</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Our Blog</h5>
-
-                            <!-- Single Blog Area -->
-                            <div class="latest-blog-area">
-                                <a href="#" class="post-title">Freelance Design Tricks How</a>
-                                <span class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> Jan 02, 2024</span>
-                            </div>
-
-                            <!-- Single Blog Area -->
-                            <div class="latest-blog-area">
-                                <a href="#" class="post-title">Free Advertising For Your Online</a>
-                                <span class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> Jan 02, 2024</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Links</h5>
-
-                            <!-- Footer Nav -->
-                            <ul class="footer-nav">
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> About Us</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> Our Room</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> Career</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> FAQs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-8 col-lg-4">
-                        <div class="single-footer-widget mb-80">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Newsletter</h5>
-                            <span>Subscribe to our newsletter about new updates.</span>
-
-                            <!-- Newsletter Form -->
-                            <form action="index.html" class="nl-form">
-                                <input type="email" class="form-control" placeholder="Enter your email...">
-                                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <!-- Social Info -->
+                    <div class="social-info">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Copywrite Area -->
-        <div class="container">
-            <div class="copywrite-content">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-8">
-                        <!-- Copywrite Text -->
-                        <div class="copywrite-text">
-                            <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>                                <!--<script>document.write(new Date().getFullYear());</script> All rights reserved | Powered <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://9appsoft.com" target="_blank">9AppSoft</a>-->
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <!-- Social Info -->
-                        <div class="social-info">
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
     <!-- Footer Area End -->
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->
