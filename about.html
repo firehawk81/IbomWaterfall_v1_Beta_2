@@ -37,13 +37,58 @@
         });
     </script>
 
+<script type="text/javascript">
+        
+        function readmore() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+            }
+
+            
+        function readmorearo() {
+            var dots = document.getElementById("dotsaro");
+            var moreText = document.getElementById("morearo");
+            var btnText = document.getElementById("myBtnaro");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+            }
+    </script>
+
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <style type="text/css">
+        #more {display: none;}
+    </style>
 
 </head>
 
 <body>
+    
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader"></div>
@@ -78,25 +123,239 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="about-thumbnail pr-lg-5 mb-100 wow fadeInUp" data-wow-delay="100ms">
-                        <img src="img/bg-img/19.jpg" alt="">
+                        <img src="img/bg-img/1B5D7A59-397B-4A75-9B74-D972362EB3EF.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <!-- Section Heading -->
-                    <div class="section-heading wow fadeInUp" data-wow-delay="300ms">
-                        <h6>Testimonials</h6>
-                        <h2>20 Years Of Experience</h2>
+                    <div class="section-heading mb-5 wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <h6>Chasing a Dream</h6> -->
+                        <h2>Chasing a Dream</h2>
                     </div>
-                    <div class="about-content mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste. Lorem Ipsum available.</p>
-                        <img src="img/core-img/signature.png" alt="">
+                    <div class="about-content mb-50 mt-20 wow fadeInUp" data-wow-delay="500ms">
+                        <p>The forward-thinking Ibom waterfall resort CEO is building toward welcoming visitors to come and Explore fascinating
+                             local landmarks, cultural highlights and key business destinations. In this interview, we learn more about Ibom Waterfall 
+                             Resort and Suites. "We believe in the power of nature to inspire and rejuvenate. Our clear goal is to create a sanctuary 
+                             where guests can reconnect with the beauty of life, find peace in the cascading waters, and discover a renewed sense of 
+                             purpose. Just as the waterfall flows with unwavering strength, management is committed to delivering an experience that 
+                             refreshes the spirit and empowers its guests to embrace every new day with enthusiasm and grace."
+        
+                             <button class="btn btn-default" onclick="readmore()" id="myBtn">Read more</button>
+    
+                        </p>
+                        
+                         <!-- <img src="img/core-img/signature.png" alt="">  -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Us Area End -->
+     <!-- About Us Area End -->
+
+    <!-- About Us Area Start -->
+    <section class="roberto-about-us-area section-padding-50-0">
+        <div class="container about-content mb-50 wow fadeInUp" data-wow-delay="500ms">
+                <span id="dots"></span><span id="more">
+            <p>
+                
+            <ul>
+                            <p>
+                            <li class="ml-3 mt-2">• What inspired you to establish the Ibom Waterfall Resort and Suites in the heart of Arochukwu, Abia State, and how do you envision it transforming the local tourism landscape?
+                            
+                                <ul class="ml-3 ">
+                                    <li><i class="fa "></i>
+                                        * My inspiration primarily came from a desire to give back to my homeland – the ancient and well renowned Kingdom of Arochukwu where I grew up and went to primary school. As a young child growing up in the 70s and early 80s, I vividly remember seeing tourists of all shades (including expatriates) coming to Arochukwu to visit the Ibini Ukpabi (Long Juju) Shrine, “Ulo nta ndi Okoroji”, and other famous traditional and historical sites in the town. Those visits have long slowed down to a trickle because of the prevailing (mostly infrastructural) challenges in recent times. Ibom Waterfalls Resort and Suites aims to provide world class accommodation and entertainment facilities to support the return of tourism and trade which in turn will boost the economy of Arochukwu and surrounding communities.
+                                    </li>
+                                </ul>
+                            </li></p>
+                            <p>
+                            <li class="ml-3 mt-2">• What is it about the Ibom Waterfall Resort and Suites that excites you the most?
+                            
+                                <ul class="ml-3 ">
+                                    <li><i class="fa "></i>
+                                        * We live up to our motto ….’Welcome home – Feel good’ by making sure that no expense is spared in the provision 
+                                        of top-class facilities for the convenience and comfort of our customers despite the challenges of being in a 
+                                        rural environment. These facilities include free high speed internet service across all parts of the hotel, 
+                                        Solar and inverter systems to ensure 24/7 power availability, Security surveillance cameras, well equipped Gym, 
+                                        Large capacity events hall, Executive meeting room and bars, Swimming pool and an exquisite Lounge/Nite club. 
+                                        Our rooms are luxuriously finished / furnished and cater for all tastes from single occupancy rooms 
+                                        (Deluxe, Executive and VIP) to 3- and 4-Bedroom Penthouse suites. 
+                                    </li>
+                                </ul>
+                            </li></p>
+                            <p>
+                            <li class="ml-3 mt-2">• How would you describe the unique charm and appeal of the local Arochukwu area to potential guests?
+                            
+                                <ul class="ml-3 ">
+                                    <li><i class="fa "></i>
+                                        * Arochukwu, located in Abia State Nigeria, is a historically significant town which is accessible from the Victor 
+                                        Attah International Airport Uyo (approx. 1.5hr commute). The most striking feature of Arochukwu (and the one most 
+                                        appreciated by visitors) is the calm, serene and secure feeling of being in the town. The people are welcoming, 
+                                        friendly and will go to great lengths to make a visitor feel at home. Arochukwu can also be accessed easily from 
+                                        Umuahia, the Abia State capital as well as the commercial hub of Aba
+                                    </li>
+                                </ul>
+                            </li></p>
+                            <p>
+                            <li class="ml-3 mt-2"> • What are some of the must-see cultural and historical highlights that you would recommend visitors 
+                                experience during their stay?
+                            
+                                <ul class="ml-3 ">
+                                    <li><i class="fa  "></i>
+                                        * Arochukwu is home to several notable historical sites that reflect its rich heritage and significance in Nigerian history:
+                                            1.⁠ ⁠Ibini Ukpabi (Long Juju) Shrine: This sacred oracle was the spiritual and judicial center of the Aro Confederacy, serving as a powerful influence in the region. Although it was believed to be destroyed during the British colonial invasion, the shrine still exists and is a major tourist attraction today.<br><br>
+                                            2.⁠ ⁠Okoroji House Museum: This museum showcases the history and culture of the Aro people, including artifacts and exhibits related to their traditional practices and the impact of the Aro Confederacy on southeastern Nigeria.<br><br>
+                                            3.⁠ ⁠79 Steps Arochukwu Waterfalls: A natural site that offers scenic beauty and an opportunity for visitors to experience the region's landscape. It has become a popular spot for both locals and tourists.<br><br>
+                                            4.⁠ ⁠Cave Temple Complex: This site is part of the historical religious landscape of Arochukwu, where rituals were performed and significant events in Aro history took place. It is linked to the broader narrative of the Aro's influence during the slave trade era.<br><br>
+                                            5. Eze Aro Palace: The Palace of the traditional ruler of Arochukwu, known as Eze Aro, is an important site that reflects the town’s history and cultural heritage.<br><br>
+                                            6. Notable Educational Institutions: Also located within a walking distance of Ibom Waterfall Resort and suites is the first private Secondary School in Nigeria – Aggrey Memorial Secondary School which was established by the foremost educationist and first Minister of education in the First Republic - 
+                                            Dr. Alvan Ikoku.  Other notable educational institutions include the Abia State College of Education and the Mary Slessor school, which was named after the renowned 
+                                            Scottish missionary Mary Slessor, who played a significant role in promoting education and social reforms in Nigeria during the late 19th and early 20th centuries.
+                                            Slessor is celebrated for her efforts to stop the infanticide of twins and for advocating for women’s rights among the Efik people in the Calabar region, which is geographically close to Arochukwu.<br><br>
+
+                                    </li>
+                                </ul>
+                            </li></p>
+                            
+                            <p></p>
+                            <li class="ml-3 mt-2"> • Can you share an example of how you've gone above and beyond to ensure guests have an unforgettable 
+                                time at the resort?
+                            
+                                <ul class="ml-3 ">
+                                    <li><i class="fa "></i>
+                                        * From the moment you walk into Ibom Waterfall suites, you will feel welcomed by our courteous Staff. 
+                                        Our facilities are top notch and comparable to what you will expect in major cities in Nigeria and internationally.
+                                         We serve rich local and international cuisine which have been highly acclaimed by guests.
+                                    </li>
+                                </ul>
+                            </li></p>
+
+                            <p>
+                            <li class="ml-3 mt-2"> • In your view, what makes the Ibom Waterfall Resort and Suites stand out as a premier tourist 
+                                destination in the region?
+                            
+                                <ul class="ml-3 ">
+                                    <li><i class="fa "></i>
+                                        * Ibom Waterfall Resort and Suites provides unique access and convenience for tourists who wish to explore the 
+                                        significant cultural and historical heritage of Arochukwu and the surrounding areas.  We pride ourselves as a home
+                                         away from home for Aros and Visitors from all over the world. There is so much to do within our facility and so
+                                          much to see in the surrounding areas. You will never have a dull moment.
+                                    </li>
+                                </ul>
+                            </li></p>
+
+                            <p>
+                            <li class="ml-3 mt-2"> • How do you plan to promote the resort's offerings to attract even more visitors to the local area?
+                            
+                                <ul class="ml-3">
+                                    <li><i class="fa "></i>
+                                        * Arochukwu is an important destination for those interested in Nigeria's cultural heritage. By providing a world
+                                         class hospitality facility, we want to reintroduce the Ancient Kingdom to the world. Our customers are assured 
+                                         of utmost comfort, security and freedom to explore the local area.
+                                    </li>
+                                </ul>
+                            </li></p>
+
+                            <p>
+                            <li class="ml-3 mt-2"> • What inspired you to be part of this incredible hospitality experience at the Ibom Waterfall Resort
+                                 and Suites?
+                            
+                                <ul class="ml-3">
+                                    <li><i class="fa "></i>
+                                        * The need to give back to the town that nurtured me from childhood. 
+                                    </li>
+                                </ul>
+                            </li></p>
+
+                            <p>
+                            <li class="ml-3 mt-2"> • How would you describe the vibrant energy and community spirit of Arochukwu to someone who's never 
+                                visited before?
+                            
+                            <ul class="ml-3">
+                                <li><i class="fa "></i>
+                                    * As a people who historically migrated to form settlements across Nigeria and neighboring regions, the Aros are fun
+                                     loving and very welcoming to visitors from all over the world. They love their roots and troop home regularly during
+                                      festival seasons like the Ikeji Aro (New Yam festival) and Christmas - hence the town is always bubbling and full of
+                                       fun during these times and most weekends. A visit to Arochukwu is always a pleasant one to be remembered.
+                                </li>
+                            </ul>
+                            </li></p>
+                            
+                            <p>
+                            <li class="ml-3 mt-2">• In what ways do you aim to immerse guests in the rich cultural heritage of this unique part of 
+                                Nigeria?
+                            
+                                <ul class="ml-3">
+                                    <li><i class="fa  "></i>
+                                        * We provide information to guests and local guides as needed. Guests are encouraged to explore the scenic 
+                                        environment and many nearby attractions on foot.
+                                    </li>
+                                </ul>
+                            </li>
+                            </p>
+            </ul>
+        </p>
+        </span>
+        </div>
+        
+   
+   
+   
+   
+    </section>
+
+    <!-- About Arochukwu Area Start -->
+    <section class="roberto-about-us-area section-padding-50-0">
+    
+        <div class="container about-content mb-50 wow fadeInUp" data-wow-delay="500ms">
+                    <!-- Section Heading -->
+                    <div class="section-heading mb-5 wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <h6>Chasing a Dream</h6> -->
+                        <h6 class="">About Arochukwu</h2>
+                    </div>
+            <p>Arochukwu, located in Abia State Nigeria, is a historically significant town which is accessible from the Victor 
+                Attah International Airport Uyo (approx. 1.5hr commute). The most striking feature of Arochukwu (and the one most
+                 appreciated by visitors) is the calm, serene and secure feeling of being in the town. The people are welcoming, 
+                 friendly and will go to great lengths to make a visitor feel at home. Arochukwu can also be accessed easily from
+                  Umuahia, the Abia State capital as well as the commercial hub of Aba.
+
+            </p>
+            
+            <span id="dotsaro"></span><span id="morearo">
+
+            <p>Must-see Cultural and Historical site</p>
+            <p>Arochukwu is home to several notable historical sites that reflect its rich heritage and significance in Nigerian history:</p>
+            <p>1.⁠ ⁠Ibini Ukpabi (Long Juju) Shrine: This sacred oracle was the spiritual and judicial center of the Aro Confederacy,
+                 serving as a powerful influence in the region. Although it was believed to be destroyed during the British 
+                 colonial invasion, the shrine still exists and is a major tourist attraction today.</p>
+            <p>2.⁠ ⁠Okoroji House Museum: This museum showcases the history and culture of the Aro people, including artifacts and exhibits 
+                related to their traditional practices and the impact of the Aro Confederacy on southeastern Nigeria.</p>
+            <p>3.⁠ ⁠79 Steps Arochukwu Waterfalls: A natural site that offers scenic beauty and an opportunity for visitors to experience the 
+                region's landscape. It has become a popular spot for both locals and tourists.</p>
+            <p>4.⁠ ⁠Cave Temple Complex: This site is part of the historical religious landscape of Arochukwu, where rituals were 
+                performed and significant events in Aro history took place. It is linked to the broader narrative of the Aro's 
+                influence during the slave trade era</p>
+            <p>5. Eze Aro Palace: The Palace of the traditional ruler of Arochukwu, known as Eze Aro, is an important site that 
+                reflects the town’s history and cultural heritage.</p>
+            <p>6. Notable Educational Institutions: 
+                Located within a walking distance of Ibom Waterfall Resort and suites is the first private Secondary School in Nigeria
+                 – Aggrey Memorial Secondary School which was established by the foremost educationist and first Minister of education
+                  in the First Republic - Dr. Alvan Ikoku.
+                </p>
+            <p>Other notable educational institutions include the Abia State College of Education and the Mary Slessor school, which was
+                 named after the renowned Scottish missionary Mary Slessor, who played a significant role in promoting education and 
+                 social reforms in Nigeria during the late 19th and early 20th centuries. Slessor is celebrated for her efforts to stop 
+                 the infanticide of twins and for advocating for women’s rights among the Efik people in the Calabar region, which is 
+                 geographically close to Arochukwu.
+                </p>
+
+            </span>
+            <button class="btn btn-default" onclick="readmorearo()" id="myBtnaro">...Read more</button>
+             <!-- <img src="img/core-img/signature.png" alt="">  -->
+        </div>
+    </section>
+
+
 
     <!-- Video Area Start -->
     <div class="roberto--video--area bg-img bg-overlay jarallax section-padding-0-100" style="background-image: url(img/bg-img/20.jpg);">
@@ -134,7 +393,7 @@
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <img src="img/bg-img/21.jpg" alt="">
+                        <img src="img/bg-img/restaurant2.jpg" alt="">
                         <div class="service-title d-flex align-items-center justify-content-center">
                             <h5>Restaurant &amp; Bar</h5>
                         </div>
@@ -143,16 +402,16 @@
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <img src="img/bg-img/22.jpg" alt="">
+                        <img src="img/bg-img/beauty-salon-4043096_1280.jpg" alt="">
                         <div class="service-title d-flex align-items-center justify-content-center">
-                            <h5>Spa &amp; Fitness</h5>
+                            <h5>Spa &amp; Salon</h5>
                         </div>
                     </div>
                 </div>
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="700ms">
-                        <img src="img/bg-img/23.jpg" alt="">
+                        <img src="img/bg-img/poolside.jpg" alt="">
                         <div class="service-title d-flex align-items-center justify-content-center">
                             <h5>Pool &amp; Party</h5>
                         </div>
@@ -171,7 +430,7 @@
                     <div class="col-12 col-md-7">
                         <div class="cta-text mb-50">
                             <h2>Contact us now!</h2>
-                            <h6>Contact (+12) 345-678-9999 to book directly or for advice</h6>
+                            <h6>Contact (+234) 808 494 5237 to book directly or for advice</h6>
                         </div>
                     </div>
                     <div class="col-12 col-md-5 text-right">
