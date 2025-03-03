@@ -1,502 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - KnightOne Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Title -->
+    <title>Ibom Lounge | You are welcome </title>
     <!-- Favicon -->
-    <link rel="icon" href="../img/core-img/ibw-logo.png">
+    <link rel="icon" href="./img/core-img/ibw-logo.png">
 
-  <!-- Title -->
-  <title>Ibom Lounge | Ibom Waterfall Resort &amp; Suites </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        /* Navigation Styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            padding: 1.0rem 5%;
+            background: rgba(10, 10, 10, 0.95);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+        .logo {
+            font-size: 1.8rem;
+            color: #c5a47e;
+            text-decoration: none;
+        }
 
-  <!-- =======================================================
-  * Template Name: KnightOne
-  * Template URL: https://bootstrapmade.com/knight-simple-one-page-bootstrap-template/
-  * Updated: Oct 16 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #c5a47e;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('../../lounge/assets/img/hero-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #c5a47e;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Events Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        .event-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 2rem;
+            color: white;
+        }
+
+        .event-date {
+            font-size: 1.2rem;
+            color: #c5a47e;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Menu Items */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: 1s;
+        }
+
+        /* Drinks Section */
+        .drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .drink-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .drink-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .drink-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .drink-info {
+            padding: 1.5rem;
+            background: #1a1a1a;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #1a1a1a;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background: #c5a47e;
+            color: #0a0a0a;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #b08f69;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            padding: 100px 50px;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #c5a47e;
+        }
+
+        .events {
+            background: #1a1a1a;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            background: #000;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+    </style>
 </head>
+<body>
+    <nav class="navbar">
+      <a class="logo" href="../../index.html"><img src="../../img/core-img/ibw-logo.png" width="56" alt=""></a>
+        
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#drinks">Drinks</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<body class="index-page">
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Where Night Meets Perfection</h1>
+            <p>Reserve Your Table | View Menu | Explore Events</p>
+        </div>
+    </section>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
+    <section class="section" id="about">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-grid">
+          <img src="../../lounge/assets/img/features-bg.jpeg" alt="Lounge Interior" height="450" width="550" class="">
+          <div>
+            <h4>Ibom Lounge</h4><br>
+            <h4>Where Elegance Meets Excitement</h4><br>
+              <p>
+                
+                Nestled in the heart of Arochukwu, Ibom Lounge is the ultimate destination for those who seek a perfect blend of sophistication and vibrant nightlife. Whether you’re looking to unwind with a handcrafted cocktail, enjoy live music, or dance the night away, we offer an unmatched experience tailored to elevate your evenings.</p>
+              <br>
+              <h4>An Atmosphere Like No Other</h4><br>
+              <p>
+                Step into a world of luxury, where ambient lighting, plush seating, and contemporary décor create the perfect backdrop for unforgettable moments. Our carefully curated music lineup, featuring live performances and top DJs, ensures an electrifying yet intimate vibe.</p>
+              <br>
+              <p>Nocturne Lounge & Bar offers a sophisticated escape from the ordinary. Our master mixologists craft extraordinary cocktails while our curated ambiance sets the stage for unforgettable nights.</p>
+              <br>
+              <p>With over a decade of experience, we blend premium ingredients, innovative techniques, and theatrical presentations to create a truly immersive experience.</p>
+          </div>
+      </div>
+    </section>
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <a class="nav-brand" href="../../index.html"><img src="../../img/core-img/ibw-logo.png" height="56" alt=""></a>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="../index.html" class="active">Home</a></li>
-          <li><a href="../room.html">Rooms</a></li>
-          <li><a href="../about.html">About Us</a></li>
-          <li><a href="../gallery/">Gallery</a></li>
-          <li><a href="../#">News</a></li>
-          <!-- <li><a href="../contact.html">Contact</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> -->
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="cta-btn" href="#about">Reservation</a>
-
+  <section class="section" id="drinks">
+    <h2 class="section-title">Signature Drinks</h2>
+    <div class="drinks-grid">
+        <div class="drink-card">
+            <img src="../../lounge/assets/img/3532a4a5-1ff5-4a00-b673-16158859dcc0.jpg" alt="Midnight Elixir" class="drink-image">
+            <div class="drink-info">
+                <h3>Midnight Elixir</h3>
+                <p>Dark rum, espresso, chocolate bitters, burnt orange</p>
+            </div>
+        </div>
+        <div class="drink-card">
+            <img src="../../lounge/assets/img/midnight-elixir.png" alt="Velvet Martini" class="drink-image">
+            <div class="drink-info">
+                <h3>Velvet Martini</h3>
+                <p>Gin, dry vermouth, lavender-infused honey</p>
+            </div>
+        </div>
     </div>
-  </header>
+</section>
 
-  <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container d-flex flex-column align-items-center text-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Ibom Lounge Where the Night Comes Alive</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Reserve Your Table | View Menu | Explore Events</p> 
-        <div data-aos="fade-up" data-aos-delay="300">
-          <!-- <a href="https://www.instagram.com/p/DFex6Z0Aomn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="glightbox pulsating-play-btn"></a> -->
-
-           
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <h4>Ibom Lounge</h4>
-        <h5> Where Elegance Meets Excitement</h5>
-        <p class="col-7">Nestled in the heart of Arochukwu, Ibom Lounge is the ultimate destination for those who seek a perfect blend of 
-          sophistication and vibrant nightlife. Whether you’re looking to unwind with a handcrafted cocktail, enjoy live music, 
-          or dance the night away, we offer an unmatched experience tailored to elevate your evenings.</p><br>
-        <h5>An Atmosphere Like No Other</h5>
-          <p class="col-7">Step into a world of luxury, where ambient lighting, plush seating, and contemporary décor create the perfect 
-            backdrop for unforgettable moments. Our carefully curated music lineup, featuring live performances and top DJs, 
-            ensures an electrifying yet intimate vibe.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <!-- <div class="row gy-4">
-
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo</span></li>
-            </ul>
+    <section class="section" id="events">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="events-grid">
+          <div class="event-card">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" 
+                   alt="Jazz Night" class="event-image">
+              <div class="event-info">
+                  <div class="event-date">April 15, 2025</div>
+                  <h3>Live Jazz Night</h3>
+                  <p>Featuring The Midnight Quartet</p>
+              </div>
           </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-          </div>
-
-        </div> -->
-
+          <!-- Add more event cards -->
       </div>
+  </section>
 
-    </section><!-- /About Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>At Ibom Lounge, we offer a premium nightlife experience with top-tier services 
-          designed to cater to all your 
-          entertainment and hospitality needs.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h5>Signature Cocktails & Premium Drinks</h5>
-              </a>
-              <ul>
-                <li><i class="bi "></i> <span>Handcrafted cocktails made by expert mixologists</span></li>
-                <li><i class="bi "></i> <span>Wide selection of premium spirits, fine wines, and craft beers</span></li>
-                <li><i class="bi "></i> <span>Exclusive house-special and seasonal cocktails</span></li>
-                <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li>
-              </ul>
-              <!-- <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p> -->
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h5>Gourmet Food & Small Plates</h5>
-              </a>
-              <ul>
-                <li><i class="bi "></i> <span>Delectable small plates and appetizers</span></li>
-                <li><i class="bi "></i> <span>International flavors and curated pairings with drinks</span></li>
-                <li><i class="bi "></i> <span>Late-night dining options for guests</span></li>
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-              <!-- <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p> -->
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h5>Live Music & DJ Performances</h5>
-              </a>
-              <ul>
-                <li><i class="bi "></i> <span>Weekly live performances featuring local and international artists</span></li>
-                <li><i class="bi "></i> <span>High-energy DJ nights with the best beats</span></li>
-                <li><i class="bi "></i> <span>Themed music nights (Jazz, R&B, House, Latin, etc.)</span></li>
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-              <!-- <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p> -->
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h5>Happy Hour & Special Promotions</h5>
-              </a>
-              <ul>
-                <li><i class="bi "></i> <span>Exclusive happy hour deals on cocktails and snacks</span></li>
-                <li><i class="bi "></i> <span>Seasonal and festive drink promotions</span></li>
-                <li><i class="bi "></i> <span>Loyalty programs and VIP discounts</span></li>
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-              <!-- <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p> -->
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h5>VIP Lounge & Private Booths</h5>
-              </a>
-              <ul>
-                <li><i class="bi "></i> <span>Exclusive VIP seating for a premium experience</span></li>
-                <li><i class="bi "></i> <span>Bottle service and personal host assistance</span></li>
-                <li><i class="bi "></i> <span>Private booths for intimate gatherings and celebrations</span></li>
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-              <!-- <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p> -->
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h5>Event Hosting & Private Parties</h5>
-              </a>
-              <ul>
-                <li><i class="bi "></i> <span>Custom event planning for birthdays, anniversaries, and corporate parties</span></li>
-                <li><i class="bi "></i> <span>Tailored drink and food packages for groups</span></li>
-                <li><i class="bi "></i> <span>Dedicated space for special celebrations with custom décor and entertainment options</span></li>
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-              <!-- <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p> -->
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
+    <footer id="contact">
+      <div class="logo">IBOM LOUNGE</div>
+      <p>Mao Ohuabunwa Street, Ibom 442101, Abia, Nigeria</p>
+      <p>Reservations: (+234) 808 494 5237</p>
+      <div class="social-icons">
+          <a href="https://www.instagram.com/ibomlounge"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61571295677830"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
       </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
-
-      <img src="assets/img/cta-bg.jpg" alt="">
-
-      <div class="container">
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-9 text-center text-xl-start">
-            <h3>Call To Action</h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Call To Action Section -->
-
-    <!-- Features Section -->
-    <section id="features" class="features section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="features-image col-lg-6 order-lg-2" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/features-bg.jpeg" alt=""></div>
-
-          <div class="col-lg-6 order-lg-1">
-
-            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-archive flex-shrink-0"></i>
-              <div>
-                <h4>Corporate & Social Gatherings</h4>
-                <p>Private spaces for business meetings and networking events, 
-                  Custom catering and beverage services for corporate guests</p>
-              </div>
-            </div><!-- End Features Item-->
-
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-basket flex-shrink-0"></i>
-              <div>
-                <h4>Reservations & Online Bookings</h4>
-                <p>Easy online and phone reservations, Priority booking for VIP guests and special occasions</p>
-              </div>
-            </div><!-- End Features Item-->
-
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-broadcast flex-shrink-0"></i>
-              <div>
-                <h4>Photography & Social Media Features</h4>
-                <p>Professional photography services for events (upon request), 
-                  Featured guest moments on social media platforms</p>
-              </div>
-            </div><!-- End Features Item-->
-
-            <!-- <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-camera-reels flex-shrink-0"></i>
-              <div>
-                <h4>Beatae veritatis</h4>
-                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-              </div>
-            </div> -->
-            <!-- End Features Item-->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Features Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section">
-
-      <div class="container-fluid">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1">
-            
-            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-              <h3><span>Frequently Asked (FAQ)</span><strong>Questions</strong></h3>
-              <!-- <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p> -->
-            </div>
-
-            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="faq-item "> <!-- faq-active -->
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>What are your opening hours?
-                  We are open from:?</h3>
-                <div class="faq-content">
-                  
-              <ul>
-                <li><i class="bi "></i> <span>Monday – Thursday: [Opening Time] – 12:00AM</span></li>
-                <li><i class="bi "></i> <span>Friday – Saturday: [Opening Time] – 12:00AM</span></li>
-                <li><i class="bi "></i> <span>Sunday: [Opening Time] – 12:00AM</span></li>
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-                  <!-- <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p> -->
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>Do I need a reservation?</h3>
-                <div class="faq-content">
-                  <ul>
-                    <li><i class="bi "></i> <span>Reservations are recommended, especially for weekends and special events. Walk-ins are welcome,
-                       but seating is 
-                      subject to availability. You can book a table online or call us at [Phone Number].</span></li>
-                    <!-- <li><i class="bi "></i> <span>Friday – Saturday: [Opening Time] – [Closing Time]</span></li>
-                    <li><i class="bi "></i> <span>Sunday: [Opening Time] – [Closing Time]</span></li> -->
-                    <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-                  </ul>
-
-                  <!-- <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p> -->
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>What is your dress code?</h3>
-                <div class="faq-content">
-                  
-              <ul>
-                <li><i class="bi "></i> <span>We encourage smart casual or upscale attire. No sportswear, flip-flops, or 
-                  excessively casual clothing. Special events may have specific dress codes.</span></li>
-                <!-- <li><i class="bi "></i> <span>Friday – Saturday: [Opening Time] – [Closing Time]</span></li>
-                <li><i class="bi "></i> <span>Sunday: [Opening Time] – [Closing Time]</span></li> -->
-                <!-- <li><i class="bi "></i> <span>Non-alcoholic mocktails and beverages</span></li> -->
-              </ul>
-                  <!-- <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p> -->
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/faq.jpg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Recent Posts Section -->
-    <section id="recent-posts" class="recent-posts section">
-
-      <!-- Section Title -->
-      <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Recent Blog Posts</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div> -->
-      <!-- End Section Title -->
-
-      <!--  -->
-
-    </section><!-- /Recent Posts Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">Ibom Lounge</h3>
-      <p>At Ibom Lounge, we bring together great drinks, delicious food, and incredible music to create an unforgettable experience.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Ibom Lounge</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-       <!-- Designed by <a href="https://9appsoft.com/">BootstrapMade</a> powered by --> <a href=“https://9appsoft.com>9AppSoft
-        </div>
-      </div>
-    </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            window.scrollY > 50 ? 
+                navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.95)' :
+                navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.9)';
+        });
 
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will respond shortly.');
+            e.target.reset();
+        });
+    </script>
 </body>
-
 </html>
